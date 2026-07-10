@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 27th Birthday My Love ❤️</title>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+<style>
+
+body{
+
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+
+overflow-x:hidden;
+
+}
+
+
+
+.card{
+
+animation:float 3s infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+
+
+.popup{
+
+animation:popup .8s ease;
+
+}
+
+
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+/* HEART FALL */
+
+.heart{
+
+position:fixed;
+
+top:-20px;
+
+animation:fall linear forwards;
+
+z-index:50;
+
+}
+
+
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* CAKE */
+
+.cake-area{
+
+margin-top:30px;
+
+cursor:pointer;
+
+}
+
+
+
+.single-cake{
+
+font-size:100px;
+
+display:inline-block;
+
+transition:1s;
+
+}
+
+
+
+.cut-cake{
+
+animation:cakeCut 1s forwards;
+
+}
+
+
+
+@keyframes cakeCut{
+
+50%{
+
+transform:scale(1.25);
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+.cake-piece{
+
+font-size:85px;
+
+display:inline-block;
+
+animation:piecePop 1s ease;
+
+}
+
+
+
+@keyframes piecePop{
+
+from{
+
+opacity:0;
+
+transform:scale(.3) rotate(-40deg);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1) rotate(0);
+
+}
+
+}
+
+
+
+.birthday-text{
+
+font-size:24px;
+
+font-weight:bold;
+color:#f59e0b;
+
+text-shadow:0 2px 8px #ffb6c1;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+}
+
+
+
+/* LETTERS */
+
+.letter{
+
+background:#fff0f5;
+
+padding:20px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px #0002;
+
+}
+
+
+
+/* KISS */
+
+.kiss{
+
+position:fixed;
+
+bottom:0;
+
+animation:kiss 3s forwards;
+
+font-size:40px;
+
+z-index:100;
+
+}
+
+
+
+@keyframes kiss{
+
+to{
+
+transform:translateY(-100vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+.gift-popup{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%) scale(0);
+
+background:white;
+
+padding:20px;
+
+border-radius:25px;
+
+box-shadow:0 10px 40px #0005;
+
+z-index:9999;
+
+animation:giftShow .6s forwards;
+
+max-width:90%;
+
+}
+
+
+.gift-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+
+.gift-gallery img{
+
+width:150px;
+
+height:150px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+
+@keyframes giftShow{
+
+to{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+}
+
+.bounce-love{
+
+position:fixed;
+
+z-index:10000;
+
+animation:bounceLove 3s infinite ease-in-out;
+
+}
+
+
+@keyframes bounceLove{
+
+0%,100%{
+
+transform:translateY(0) scale(1) rotate(0deg);
+
+}
+
+
+25%{
+
+transform:translateY(-80px) scale(1.2) rotate(20deg);
+
+}
+
+
+50%{
+
+transform:translateY(0) scale(1) rotate(-20deg);
+
+}
+
+
+75%{
+
+transform:translateY(-40px) scale(1.1) rotate(10deg);
+
+}
+
+}
+
+.bounce-love{
+    position:absolute;
+    z-index:10000;
+    animation:bounceLove 3s infinite ease-in-out;
+}
+
+@keyframes bounceLove{
+
+    0%,100%{
+        transform:translateY(0) scale(1) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-50px) scale(1.2) rotate(20deg);
+    }
+
+    50%{
+        transform:translateY(20px) scale(1) rotate(-20deg);
+    }
+
+    75%{
+        transform:translateY(-30px) scale(1.1) rotate(10deg);
+    }
+
+}
+@keyframes moveLove{
+
+0%{
+    transform:translateY(0px) scale(1);
+}
+
+50%{
+    transform:translateY(-40px) scale(1.2);
+}
+
+100%{
+    transform:translateY(20px) scale(1);
+}
+
+}
+
+
+
+@keyframes floatMessage{
+
+0%{
+    transform:translate(0,0) rotate(0deg);
+}
+
+25%{
+    transform:translate(30px,-30px) rotate(5deg);
+}
+
+50%{
+    transform:translate(-30px,30px) rotate(-5deg);
+}
+
+75%{
+    transform:translate(30px,20px) rotate(5deg);
+}
+
+100%{
+    transform:translate(0,0) rotate(0deg);
+}
+
+}
+function stopLoveSong(){
+
+    let loveAudio = document.getElementById("loveAudio");
+
+    loveAudio.pause();
+    loveAudio.currentTime = 0;
+
+}
+</style>
+
+
+</head>
+
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+
+
+<audio id="birthdayAudio" src="Happy_Birthday_song.mp3"></audio>
+
+<audio id="loveAudio" src="love_song.mp3" loop></audio>
+
+
+<div class="card bg-white rounded-3xl shadow-2xl w-full max-w-lg text-center p-6">
+
+
+
+<!-- PAGE 1 -->
+
+
+<div id="initial">
+
+
+
+<h1 class="text-5xl font-bold text-pink-600">
+
+💖💖💖
+
+</h1>
+
+
+
+<p class="mt-6 text-xl text-gray-700">
+
+🎂❤️ <b>Happy Birthday My Love ❤️</b>
+
+</p>
+
+
+
+<p class="mt-4 text-gray-500">
+Wishing you a day filled with endless happiness, laughter, love, and everything your heart desires 😊✨
+May this year bring you success, good health, endless blessings, and countless reasons to smile 🌟💫<br><br>
+Thank you for bringing so much joy, warmth, and positivity into my life 💕🌸 Every moment with you is a beautiful memory that I cherish forever 🥰✨
+I'll always be by your side, supporting you, loving you endlessly, and making unforgettable memories with you 🤗❤️<br><br>
+Enjoy your special day to the fullest 🎈🎁 Keep smiling, keep shining, and always remember how special and loved you are 💖✨
+</p>
+
+
+
+<!-- SINGLE CAKE -->
+
+
+<div class="cake-area" onclick="cutCake()">
+
+
+
+<div id="cake" class="single-cake">
+
+🎂
+
+</div>
+
+
+
+<p id="cutText" class="text-pink-600 font-bold mt-3">
+
+Tap cake to cut 🎂✨
+
+</p>
+
+
+
+<div id="birthdayMessage"></div>
+
+
+
+</div>
+
+
+
+
+
+<div class="text-5xl mt-5">
+
+🎁🎉💖
+
+</div>
+
+
+
+
+
+<button onclick="openSurprise()"
+
+class="mt-8 px-8 py-3 bg-pink-500 text-white rounded-xl shadow-lg">
+
+
+Click for Surprise 🎊
+
+
+</button>
+
+
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div id="message" class="hidden">
+
+
+<h1 class="text-5xl font-bold text-pink-600">
+
+💖💖💖
+
+</h1>
+
+
+
+<p class="mt-5 text-gray-700 text-base sm:text-lg leading-relaxed">
+
+🎂❤️ <strong>Happy Birthday, My Love! ❤️🎉</strong><br><br>
+Happy Birthday to the most special person in my life ❤❤
+🌹 Today is the most beautiful day because it's the day the most precious person in my life was born. 🎈✨ Every moment with you is a gift 🎁, and every memory we create together becomes a treasure 💎 that I will cherish forever. ♾️💖<br><br>
+
+🥰 You are my happiness 😊, my peace 🕊️, my biggest strength 💪, and the reason my heart smiles every single day. ❤️ Thank you for filling my life with endless love 💕, laughter 😂, and countless beautiful memories 📸✨. I can't imagine my world 🌎 without you 💞<br><br>
+
+🎊 On your special day 🎂, I wish you endless happiness 😍, good health 🌿, success 🏆, and every dream you've ever wished for 🌟. May your smile 😊 always shine as brightly ✨ as it does today, and may your heart ❤️ always be filled with love 💕 and joy 🌈.<br><br>
+
+🤝 I promise to stand beside you through every happiness 😇 and every challenge 🌧️, to hold your hand 🤲, to support your dreams 🌠, and to love you a little more with every sunrise 🌅 and every sunset 🌇.<br><br>
+
+💑 No matter where life takes us 🛤️, my heart ❤️ will always choose you. You are my favorite person 🥰, my safe place 🏡, my greatest blessing 🙏, and the most beautiful chapter 📖 of my life. Loving you 💕 is the best thing that has ever happened to me. ✨<br><br>
+
+💖 I love you more than words can ever express 🥹, more than the stars in the sky 🌌✨, and more than every heartbeat in my heart 💓. My love for you grows stronger every single day 🌱❤️, and I hope this birthday 🎂 marks the beginning of your happiest 😊 and most beautiful year yet 🌸🌟.<br><br>
+
+💍 Forever yours, always and completely. 💖✨
+
+</p>
+
+
+
+<div class="text-6xl mt-6">
+
+💖💖💖
+
+</div>
+
+
+
+
+<button onclick="finalSurprise()"
+
+class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
+
+
+🎁 Open Final Surprise
+
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- PAGE 3 -->
+
+
+<div id="memoriesPage" class="hidden">
+
+
+
+<h1 class="text-4xl font-bold text-pink-600 mt-5">
+
+💖 Our Love Story 💖
+
+</h1>
+
+
+
+<p class="mt-3 text-gray-600">
+
+Every picture has a beautiful memory ❤️
+
+</p>
+
+
+
+
+<!-- TIMER -->
+
+
+<div class="bg-pink-100 rounded-2xl p-5 mt-8 shadow">
+
+
+<h2 class="text-2xl font-bold text-pink-600">
+
+❤️ Together Forever
+
+</h2>
+
+
+<p id="loveTimer" class="text-xl mt-3">
+
+Loading...
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- PHOTO 1 -->
+
+
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+
+
+<img src="pic1.jpg"
+
+onclick="showMemory(1)"
+
+class="rounded-2xl w-full h-80 object-cover">
+
+
+<h2 class="text-xl text-pink-600 font-bold mt-3">
+
+🌹 Our Special Moment
+
+</h2>
+
+
+<p id="memory1" class="hidden">
+
+This moment became special because I was with you ❤️
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- PHOTO 2 -->
+
+
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+
+
+<img src="pic2.jpg"
+
+onclick="showMemory(2)"
+
+class="rounded-2xl w-full h-80 object-cover">
+
+
+<h2 class="text-xl text-pink-600 font-bold mt-3">
+
+✨ Beautiful Smile
+
+</h2>
+
+
+<p id="memory2" class="hidden">
+
+Your smile makes my world brighter 😊❤️
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- PHOTO 3 -->
+
+
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+
+
+<img src="pic3.jpg"
+
+onclick="showMemory(3)"
+
+class="rounded-2xl w-full h-80 object-cover">
+
+
+<h2 class="text-xl text-pink-600 font-bold mt-3">
+
+💑 Forever Together
+
+</h2>
+
+
+<p id="memory3" class="hidden">
+
+Every memory with you is a treasure 💕
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- PHOTO 4 -->
+
+
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+
+
+<img src="pic4.jpg"
+
+onclick="showMemory(4)"
+
+class="rounded-2xl w-full h-80 object-cover">
+
+
+<h2 class="text-xl text-pink-600 font-bold mt-3">
+
+💖 My Favorite Person
+
+</h2>
+
+
+<p id="memory4" class="hidden">
+
+Thank you for making my life beautiful ❤️
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- SECRET LETTERS -->
+
+
+<h2 class="text-3xl font-bold text-pink-600 mt-10">
+
+💌 Secret Love Letters
+
+</h2>
+
+
+
+
+
+<div class="letter" onclick="openLetter(1)">
+
+
+<h3 class="text-xl font-bold">
+
+💌 Open when you miss me 💕
+
+</h3>
+
+
+<p id="letter1" class="hidden mt-3">
+
+
+❤️ Even when we are apart, my heart is always beside you.
+
+Remember our beautiful moments and know that I love you endlessly 💖
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="letter" onclick="openLetter(2)">
+
+
+<h3 class="text-xl font-bold">
+
+💌 Open when you feel sad 🥺
+
+</h3>
+
+
+<p id="letter2" class="hidden mt-3">
+
+
+🌈 Your smile is my favorite thing in this world.
+
+Never forget how special and loved you are ❤️
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="letter" onclick="openLetter(3)">
+
+
+<h3 class="text-xl font-bold">
+
+💌 Open when you need love 💋
+
+</h3>
+
+
+<p id="letter3" class="hidden mt-3">
+
+
+💖 Sending you unlimited hugs, kisses and all my love.
+
+You are my forever person ❤️
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- GIFT -->
+
+
+<div class="mt-10">
+
+
+<div id="gift"
+
+onclick="openGift()"
+
+class="text-7xl cursor-pointer">
+
+🎁
+
+</div>
+
+
+<p class="text-pink-600 font-bold">
+
+Tap gift box 🎁
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- VOICE -->
+
+
+<div class="mt-10">
+
+
+<h2 class="text-2xl font-bold text-pink-600">
+
+🎧 My Voice Message ❤️
+
+</h2>
+
+
+<audio id="voiceNote" controls class="mx-auto mt-3"
+onplay="pauseLoveSong()"
+onpause="resumeLoveSong()"
+onended="resumeLoveSong()">
+
+<source src="my_voice.mp3" type="audio/mp3">
+
+</audio>
+
+</div>
+
+
+
+
+
+
+
+
+<button onclick="lastSurprise()"
+
+class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
+
+
+🎆 Final Surprise
+
+
+</button>
+
+
+
+
+</div>
+
+<script>
+
+
+// ================= CAKE CUT =================
+
+function cutCake(){
+
+    let cake = document.getElementById("cake");
+
+    if(cake.dataset.cut){
+        return;
+    }
+
+    cake.dataset.cut = "true";
+
+// Play Happy Birthday song when cake is cut
+let audio = document.getElementById("birthdayAudio");
+audio.currentTime = 0;
+audio.play().catch(err => console.log(err));
+
+    // Hide "Tap cake to cut" text after click
+    document.getElementById("cutText").style.display = "none";
+
+
+    cake.classList.add("cut-cake");
+
+
+    setTimeout(()=>{
+
+        cake.innerHTML = `
+
+        <span class="cake-piece">🍰</span>
+        <span class="cake-piece">🍰</span>
+
+        `;
+
+
+        document.getElementById("birthdayMessage").innerHTML =
+
+        `
+
+        <div class="birthday-text">
+
+        🎉 Happy 27th Birthday, Baby! ❤️
+
+        </div>
+
+        `;
+
+
+        confetti({
+
+            particleCount:300,
+            spread:150
+
+        });
+
+
+    },1000);
+
+}
+
+
+// ================= PAGE 1 TO PAGE 2 =================
+
+
+function openSurprise(){
+
+    document.getElementById("initial").style.display="none";
+
+    let msg=document.getElementById("message");
+
+    msg.classList.remove("hidden");
+    msg.classList.add("popup");
+
+
+    // Stop Birthday song
+    let birthdayAudio = document.getElementById("birthdayAudio");
+    birthdayAudio.pause();
+    birthdayAudio.currentTime = 0;
+
+
+    // Start Love song
+    let loveAudio = document.getElementById("loveAudio");
+    loveAudio.currentTime = 0;
+    loveAudio.play().catch(err => console.log(err));
+
+
+    confetti({
+        particleCount:250,
+        spread:120
+    });
+
+
+    createHearts();
+
+}
+
+
+
+// ================= PAGE 2 TO PAGE 3 =================
+
+
+function finalSurprise(){
+
+
+document.getElementById("message").style.display="none";
+
+
+let page=document.getElementById("memoriesPage");
+
+
+page.classList.remove("hidden");
+
+
+page.classList.add("popup");
+
+
+startTimer();
+
+
+createHearts();
+
+
+}
+
+
+
+
+
+// ================= MEMORY PHOTOS =================
+
+
+function showMemory(num){
+
+
+let item=document.getElementById("memory"+num);
+
+
+
+if(item.classList.contains("hidden")){
+
+
+item.classList.remove("hidden");
+
+
+item.classList.add("popup");
+
+
+}
+
+else{
+
+
+item.classList.add("hidden");
+
+
+}
+
+
+}
+
+
+
+
+
+// ================= SECRET LETTERS =================
+
+
+function openLetter(num){
+
+
+let letter=document.getElementById("letter"+num);
+
+
+
+if(letter.classList.contains("hidden")){
+
+
+letter.classList.remove("hidden");
+
+
+letter.classList.add("popup");
+
+
+
+confetti({
+
+particleCount:80,
+
+spread:70
+
+});
+
+
+
+createHearts();
+
+
+
+}
+
+else{
+
+
+letter.classList.add("hidden");
+
+
+}
+
+
+
+}
+
+
+
+
+
+// ================= LOVE TIMER =================
+
+
+function startTimer(){
+
+
+let start=new Date("2024-03-20");
+
+
+
+setInterval(()=>{
+
+
+let now=new Date();
+
+
+let diff=now-start;
+
+
+
+let days=Math.floor(diff/(1000*60*60*24));
+
+
+let hours=Math.floor(diff/(1000*60*60)%24);
+
+
+let minutes=Math.floor(diff/(1000*60)%60);
+
+
+let seconds=Math.floor(diff/1000%60);
+
+
+
+document.getElementById("loveTimer").innerHTML=
+
+
+days+" Days ❤️ "+
+
+hours+" Hours ❤️ "+
+
+minutes+" Minutes ❤️ "+
+
+seconds+" Seconds";
+
+
+
+},1000);
+
+
+
+}
+
+
+
+
+
+
+// ================= GIFT =================
+
+function openGift(){
+
+confetti({
+
+particleCount:150,
+
+spread:100
+
+});
+
+
+let popup=document.createElement("div");
+
+popup.className="gift-popup";
+
+
+popup.innerHTML=
+
+`
+
+<div class="gift-gallery">
+
+<img src="gift1.jpg">
+
+<img src="gift2.jpg">
+
+<img src="gift3.jpg">
+
+<img src="gift4.jpg">
+
+</div>
+
+<p class="text-pink-600 font-bold mt-3">
+
+Tap image to close ❤️
+
+</p>
+
+`;
+
+
+// Close popup when clicked
+popup.onclick=function(){
+
+popup.remove();
+
+};
+
+
+document.body.appendChild(popup);
+
+
+}
+
+
+
+
+// ================= HEART EFFECT =================
+
+
+function createHearts(){
+
+
+for(let i=0;i<40;i++){
+
+
+let h=document.createElement("div");
+
+
+h.innerHTML="❤️";
+
+
+h.className="heart";
+
+
+h.style.left=Math.random()*100+"vw";
+
+
+h.style.fontSize=(20+Math.random()*30)+"px";
+
+
+h.style.animationDuration=(3+Math.random()*5)+"s";
+
+
+
+document.body.appendChild(h);
+
+
+
+setTimeout(()=>{
+
+
+h.remove();
+
+
+},8000);
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= FINAL LOVE SURPRISE =================
+
+
+function lastSurprise(){
+
+
+
+confetti({
+
+particleCount:150,
+
+spread:120,
+
+origin:{y:0.5}
+
+});
+
+
+
+
+
+let final=document.createElement("div");
+
+
+
+final.style.position="fixed";
+
+final.style.top="0";
+
+final.style.left="0";
+
+final.style.width="100%";
+
+final.style.height="100%";
+
+
+
+final.style.background=
+
+"linear-gradient(135deg,#ffd1dc,#ff9a9e,#fad0c4)";
+
+
+final.style.display="flex";
+
+
+final.style.alignItems="center";
+
+
+final.style.justifyContent="center";
+
+
+final.style.flexDirection="column";
+
+
+final.style.textAlign="center";
+
+
+final.style.color="white";
+
+
+final.style.fontSize="38px";
+
+
+final.style.fontWeight="bold";
+
+
+final.style.zIndex="9999";
+final.style.overflow="hidden";
+
+final.style.animation="popup 2s ease";
+
+
+
+final.innerHTML="";
+
+
+
+document.body.appendChild(final);
+// FULL SCREEN DYNAMIC LOVE MESSAGES ❤️
+
+let loveMessages = [
+    "I Love You ❤️",
+    "Forever Yours 💖",
+    "My Happiness 🥰",
+    "My Favorite Person ❤️",
+    "Always With You 💕",
+    "My Everything 🌹",
+    "Love You Forever ♾️",
+    "My Heart Is Yours ❤️",
+    "You Are My World 🌎",
+    "My Dream Come True ✨",
+    "I Choose You Always ❤️",
+    "Forever And Always 💍",
+    "You Make Me Smile 😊",
+    "My Beautiful Love 🌸",
+    "Endless Love For You 💖",
+    "Together Forever 🥰"
+];
+
+
+loveMessages.forEach((msg,index)=>{
+
+    let text=document.createElement("div");
+
+    text.innerHTML=msg;
+
+    text.style.position="absolute";
+
+    // Dynamic full screen placement
+    text.style.left=Math.random()*70+"vw";
+    text.style.top=Math.random()*70+"vh";
+
+    text.style.fontSize=
+    (18 + Math.random()*18)+"px";
+
+    text.style.fontWeight="bold";
+
+    text.style.color="white";
+
+    text.style.whiteSpace="nowrap";
+
+    text.style.textShadow=
+    "0 0 15px #ff1493";
+
+    text.style.animation=
+    "floatMessage "+
+    (5+Math.random()*5)+
+    "s infinite ease-in-out";
+
+    text.style.animationDelay=
+    (index*0.3)+"s";
+
+    final.appendChild(text);
+
+});
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="absolute";
+
+heart.style.left=Math.random()*90+"%";
+heart.style.top=Math.random()*90+"%";
+
+heart.style.fontSize="35px";
+
+heart.style.animation=
+"bounceLove 3s infinite ease-in-out";
+
+final.appendChild(heart);
+
+}
+
+
+for(let i=0;i<10;i++){
+
+let kiss=document.createElement("div");
+
+kiss.innerHTML="💋";
+
+kiss.style.position="absolute";
+
+kiss.style.left=Math.random()*90+"%";
+kiss.style.top=Math.random()*90+"%";
+
+kiss.style.fontSize="40px";
+
+kiss.style.animation=
+"bounceLove 4s infinite ease-in-out";
+
+final.appendChild(kiss);
+
+}
+}
+
+
+function pauseLoveSong(){
+
+    let loveAudio = document.getElementById("loveAudio");
+
+    if(!loveAudio.paused){
+        loveAudio.pause();
+    }
+
+}
+
+
+function resumeLoveSong(){
+
+    let loveAudio = document.getElementById("loveAudio");
+
+    loveAudio.play().catch(err => console.log(err));
+
+}
+</script>
+
+
+</body>
+
+</html>
