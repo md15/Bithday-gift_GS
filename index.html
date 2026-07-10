@@ -30,6 +30,7 @@ html,
 body{
 
     width:100%;
+
     min-height:100%;
 
     overflow-x:hidden;
@@ -39,10 +40,12 @@ body{
 }
 
 
-
 body{
 
     margin:0;
+
+    min-height:100svh;
+
 
     background:
 
@@ -53,19 +56,22 @@ body{
         #ffd1dc
     );
 
-    -webkit-tap-highlight-color:transparent;
 
     display:flex;
 
+    justify-content:center;
+
     align-items:center;
 
-    justify-content:center;
 
     padding:
 
     env(safe-area-inset-top)
-    16px
+    12px
     env(safe-area-inset-bottom);
+
+
+    -webkit-tap-highlight-color:transparent;
 
 }
 
@@ -76,10 +82,9 @@ body{
 
 .hidden{
 
-    display:none !important;
+    display:none!important;
 
 }
-
 
 
 #message,
@@ -96,14 +101,27 @@ body{
 
 .card{
 
+
     width:100%;
+
 
     max-width:520px;
 
 
+    max-height:95svh;
+
+
+    overflow-y:auto;
+
+
+    overflow-x:hidden;
+
+
+
     background:
 
-    rgba(255,255,255,.94);
+    rgba(255,255,255,.96);
+
 
 
     backdrop-filter:
@@ -111,10 +129,13 @@ body{
     blur(12px);
 
 
+
     border-radius:32px;
 
 
+
     padding:25px;
+
 
 
     box-shadow:
@@ -122,10 +143,28 @@ body{
     0 20px 60px rgba(255,70,120,.25);
 
 
+
     animation:
 
     float 3s infinite ease-in-out;
 
+
+}
+
+
+
+.card::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+
+.card::-webkit-scrollbar-thumb{
+
+    background:#ff9bb5;
+
+    border-radius:20px;
 
 }
 
@@ -160,12 +199,9 @@ transform:translateY(-8px);
 
 .popup{
 
-animation:
-
-popup .8s ease;
+animation:popup .8s ease;
 
 }
-
 
 
 @keyframes popup{
@@ -175,7 +211,11 @@ from{
 
 opacity:0;
 
-transform:scale(.85) translateY(20px);
+transform:
+
+scale(.85)
+
+translateY(20px);
 
 }
 
@@ -184,7 +224,11 @@ to{
 
 opacity:1;
 
-transform:scale(1) translateY(0);
+transform:
+
+scale(1)
+
+translateY(0);
 
 }
 
@@ -195,7 +239,7 @@ transform:scale(1) translateY(0);
 
 
 
-/* ================= HEARTS ================= */
+/* ================= HEART FALL ================= */
 
 
 .heart{
@@ -238,14 +282,18 @@ opacity:0;
 
 
 
+
 /* ================= CAKE ================= */
 
 
 .cake-area{
 
+
 margin-top:30px;
 
+
 cursor:pointer;
+
 
 background:
 
@@ -262,7 +310,9 @@ linear-gradient(
 
 border-radius:25px;
 
+
 padding:20px;
+
 
 }
 
@@ -270,13 +320,17 @@ padding:20px;
 
 .single-cake{
 
+
 font-size:
 
 clamp(65px,20vw,100px);
 
+
 display:inline-block;
 
+
 transition:1s;
+
 
 }
 
@@ -315,11 +369,14 @@ transform:scale(1);
 
 .cake-piece{
 
+
 font-size:
 
 clamp(50px,18vw,85px);
 
+
 display:inline-block;
+
 
 animation:
 
@@ -364,6 +421,8 @@ rotate(0);
 
 
 
+
+
 /* ================= TEXT ================= */
 
 
@@ -375,15 +434,19 @@ font-size:
 clamp(18px,5vw,26px);
 
 
+
 font-weight:bold;
+
 
 
 color:#ff4d88;
 
 
+
 text-shadow:
 
 0 2px 10px #ffb6c1;
+
 
 
 animation:
@@ -406,6 +469,18 @@ transform:scale(1.1);
 
 }
 
+
+
+
+
+.card p,
+.card h1,
+.card h2,
+.card h3{
+
+text-align:center;
+
+}
 
 
 
@@ -452,6 +527,8 @@ box-shadow:
 
 
 
+
+
 /* ================= IMAGES ================= */
 
 
@@ -460,7 +537,9 @@ img{
 
 max-width:100%;
 
+
 height:auto;
+
 
 display:block;
 
@@ -478,6 +557,7 @@ audio{
 
 
 width:100%;
+
 
 max-width:100%;
 
@@ -497,15 +577,50 @@ button{
 touch-action:manipulation;
 
 
-border-radius:18px!important;
+width:90%;
 
 
-font-weight:700;
+max-width:320px;
+
+
+display:block;
+
+
+margin-left:auto!important;
+
+
+margin-right:auto!important;
+
+
+
+padding:14px 20px!important;
+
+
+
+font-size:18px;
+
+
+
+font-weight:800;
+
+
+
+border-radius:20px!important;
+
+
+
+background:#e91e63!important;
+
+
+
+color:white!important;
+
 
 
 box-shadow:
 
-0 8px 20px rgba(255,0,80,.25);
+0 8px 25px rgba(233,30,99,.45);
+
 
 
 transition:.3s;
@@ -525,7 +640,9 @@ transform:scale(.94);
 
 
 
-/* ================= GIFT POPUP ================= */
+
+
+/* ================= GIFT ================= */
 
 
 .gift-popup{
@@ -535,6 +652,7 @@ position:fixed;
 
 
 top:50%;
+
 
 left:50%;
 
@@ -546,13 +664,17 @@ translate(-50%,-50%)
 scale(0);
 
 
+
 background:white;
+
 
 
 padding:22px;
 
 
+
 border-radius:30px;
+
 
 
 box-shadow:
@@ -560,7 +682,9 @@ box-shadow:
 0 20px 50px #0005;
 
 
+
 z-index:9999;
+
 
 
 animation:
@@ -568,10 +692,17 @@ animation:
 giftShow .6s forwards;
 
 
-max-width:95%;
+
+width:90%;
 
 
-max-height:90vh;
+
+max-width:450px;
+
+
+
+max-height:90svh;
+
 
 
 overflow:auto;
@@ -586,7 +717,9 @@ overflow:auto;
 
 display:grid;
 
+
 grid-template-columns:repeat(2,1fr);
+
 
 gap:15px;
 
@@ -630,7 +763,8 @@ scale(1);
 
 
 
-/* ================= FINAL ANIMATION ================= */
+
+/* ================= FINAL PAGE ANIMATIONS ================= */
 
 
 @keyframes bounceLove{
@@ -641,7 +775,9 @@ scale(1);
 transform:
 
 translateY(0)
+
 scale(1)
+
 rotate(0);
 
 }
@@ -652,7 +788,9 @@ rotate(0);
 transform:
 
 translateY(-30px)
+
 scale(1.15)
+
 rotate(15deg);
 
 }
@@ -663,6 +801,17 @@ rotate(15deg);
 
 
 @keyframes floatMessage{
+
+
+0%,100%{
+
+transform:
+
+translate(0,0)
+
+rotate(0);
+
+}
 
 
 50%{
@@ -690,10 +839,9 @@ rotate(5deg);
 
 body{
 
-align-items:flex-start;
+padding:10px;
 
-padding:12px;
-
+align-items:center;
 
 }
 
@@ -701,11 +849,11 @@ padding:12px;
 
 .card{
 
+padding:18px!important;
 
-margin-top:10px;
+border-radius:25px;
 
-padding:20px!important;
-
+max-height:96svh;
 
 }
 
@@ -727,9 +875,27 @@ font-size:3rem!important;
 
 
 
+.text-xl{
+
+font-size:1.1rem!important;
+
+}
+
+
+
 .gift-gallery{
 
 grid-template-columns:1fr;
+
+}
+
+
+
+button{
+
+width:95%;
+
+font-size:16px;
 
 }
 
@@ -743,8 +909,8 @@ grid-template-columns:1fr;
 
 </head>
 
-
 <body>
+
 
 <!-- AUDIO FILES -->
 
@@ -772,9 +938,13 @@ webkit-playsinline>
 
 
 
+
+
 <!-- MAIN CARD -->
 
 <div class="card text-center">
+
+
 
 
 
@@ -794,11 +964,13 @@ webkit-playsinline>
 
 
 
+
 <p class="mt-6 text-xl text-gray-700">
 
 🎂❤️ <b>Happy Birthday My Love ❤️</b>
 
 </p>
+
 
 
 
@@ -840,6 +1012,7 @@ Keep smiling, keep shining, and always remember how special and loved you are �
 
 
 </div>
+
 
 
 
@@ -893,6 +1066,7 @@ Tap cake to cut 🎂✨
 
 
 
+
 <button
 
 onclick="openSurprise()"
@@ -907,8 +1081,8 @@ Click for Surprise 🎊
 
 
 
-</div>
 
+</div>
 
 <!-- ================= PAGE 2 ================= -->
 
@@ -1089,6 +1263,8 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 
 
+
+
 <!-- ================= PAGE 3 ================= -->
 
 
@@ -1139,12 +1315,7 @@ Loading...
 
 </div>
 
-
-
-
-
-
-<!-- PHOTO CARDS -->
+<!-- ================= PHOTO CARDS ================= -->
 
 
 <div class="bg-white rounded-3xl shadow-xl p-4 mt-8 overflow-hidden">
@@ -1284,6 +1455,11 @@ Thank you for making my life beautiful ❤️
 </div>
 
 
+
+
+
+
+
 <!-- SECRET LOVE LETTERS -->
 
 
@@ -1292,6 +1468,7 @@ Thank you for making my life beautiful ❤️
 💌 Secret Love Letters
 
 </h2>
+
 
 
 
@@ -1385,7 +1562,6 @@ You are my forever person ❤️
 
 
 
-
 <!-- GIFT -->
 
 
@@ -1416,14 +1592,6 @@ Tap gift box 🎁
 
 
 </div>
-
-
-
-
-
-
-
-
 
 <!-- VOICE MESSAGE -->
 
@@ -1492,26 +1660,30 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 
 
+</div>
+
 
 </div>
 
 
-<!-- END MAIN CARD -->
+
 
 
 <script>
 
 
-// ================= SAFE CONFETTI =================
+// ================= CONFETTI =================
 
-function launchConfetti(amount=150, spread=100){
 
-    if(typeof confetti === "function"){
+function launchConfetti(amount=150,spread=100){
+
+    if(typeof confetti==="function"){
 
         confetti({
 
-            particleCount: amount,
-            spread: spread
+            particleCount:amount,
+
+            spread:spread
 
         });
 
@@ -1523,87 +1695,75 @@ function launchConfetti(amount=150, spread=100){
 
 
 
-// ================= CAKE CUT =================
+// ================= CAKE =================
 
 
 function cutCake(){
 
 
-    let cake=document.getElementById("cake");
+let cake=document.getElementById("cake");
 
 
-    if(cake.dataset.cut){
-
-        return;
-
-    }
+if(cake.dataset.cut)return;
 
 
-    cake.dataset.cut="true";
+cake.dataset.cut="true";
 
 
+let audio=document.getElementById("birthdayAudio");
 
-    let audio=document.getElementById("birthdayAudio");
 
+if(audio){
 
-    if(audio){
+audio.currentTime=0;
 
-        audio.currentTime=0;
+audio.play().catch(()=>{});
 
-        audio.play().catch(()=>{});
-
-    }
+}
 
 
 
+document.getElementById("cutText").style.display="none";
 
 
-    let cutText=document.getElementById("cutText");
-
-
-    if(cutText){
-
-        cutText.style.display="none";
-
-    }
+cake.classList.add("cut-cake");
 
 
 
-    cake.classList.add("cut-cake");
+setTimeout(()=>{
+
+
+cake.innerHTML=
+
+`
+
+<span class="cake-piece">🍰</span>
+
+<span class="cake-piece">🍰</span>
+
+`;
 
 
 
+document.getElementById("birthdayMessage").innerHTML=
 
+`
 
-    setTimeout(()=>{
+<div class="birthday-text">
 
+🎉 Happy 27th Birthday, Baby! ❤️
 
-        cake.innerHTML=`
+</div>
 
-        <span class="cake-piece">🍰</span>
-        <span class="cake-piece">🍰</span>
-
-        `;
-
-
-
-        document.getElementById("birthdayMessage").innerHTML=`
-
-        <div class="birthday-text">
-
-        🎉 Happy 27th Birthday, Baby! ❤️
-
-        </div>
-
-        `;
+`;
 
 
 
-        launchConfetti(300,150);
+launchConfetti(300,150);
 
 
 
-    },1000);
+},1000);
 
 
 
@@ -1616,72 +1776,55 @@ function cutCake(){
 
 
 
-
-// ================= PAGE 1 TO PAGE 2 =================
-
+// ================= OPEN PAGE 2 =================
 
 
 function openSurprise(){
 
 
-
-    document.getElementById("initial").style.display="none";
-
+document.getElementById("initial").style.display="none";
 
 
-    let msg=document.getElementById("message");
+let msg=document.getElementById("message");
 
 
+msg.classList.remove("hidden");
 
-    msg.classList.remove("hidden");
+msg.style.display="block";
 
-    msg.style.display="block";
-
-    msg.classList.add("popup");
+msg.classList.add("popup");
 
 
 
+let b=document.getElementById("birthdayAudio");
+
+
+if(b){
+
+b.pause();
+
+b.currentTime=0;
+
+}
 
 
 
-    let birthdayAudio=document.getElementById("birthdayAudio");
+let love=document.getElementById("loveAudio");
+
+
+if(love){
+
+love.currentTime=0;
+
+love.play().catch(()=>{});
+
+}
 
 
 
-    if(birthdayAudio){
+launchConfetti(250,120);
 
-        birthdayAudio.pause();
-
-        birthdayAudio.currentTime=0;
-
-    }
-
-
-
-
-
-
-
-    let loveAudio=document.getElementById("loveAudio");
-
-
-
-    if(loveAudio){
-
-        loveAudio.currentTime=0;
-
-        loveAudio.play().catch(()=>{});
-
-    }
-
-
-
-
-
-    launchConfetti(250,120);
-
-
-    createHearts();
+createHearts();
 
 
 
@@ -1693,37 +1836,29 @@ function openSurprise(){
 
 
 
-
-
-// ================= PAGE 2 TO PAGE 3 =================
-
+// ================= OPEN PAGE 3 =================
 
 
 function finalSurprise(){
 
 
-
-    document.getElementById("message").style.display="none";
-
+document.getElementById("message").style.display="none";
 
 
-    let page=document.getElementById("memoriesPage");
+let page=document.getElementById("memoriesPage");
 
 
+page.classList.remove("hidden");
 
-    page.classList.remove("hidden");
+page.style.display="block";
 
-    page.style.display="block";
-
-    page.classList.add("popup");
-
+page.classList.add("popup");
 
 
-    startTimer();
+startTimer();
 
 
-    createHearts();
-
+createHearts();
 
 
 }
@@ -1734,46 +1869,20 @@ function finalSurprise(){
 
 
 
-
-
-// ================= MEMORY PHOTOS =================
-
+// ================= MEMORY =================
 
 
 function showMemory(num){
 
 
-
-    let item=document.getElementById("memory"+num);
-
+let item=document.getElementById("memory"+num);
 
 
-    if(!item){
+if(item){
 
-        return;
+item.classList.toggle("hidden");
 
-    }
-
-
-
-    if(item.classList.contains("hidden")){
-
-
-        item.classList.remove("hidden");
-
-        item.classList.add("popup");
-
-
-    }
-
-    else{
-
-
-        item.classList.add("hidden");
-
-
-    }
-
+}
 
 }
 
@@ -1781,55 +1890,35 @@ function showMemory(num){
 
 
 
-
-
-
-
-// ================= SECRET LETTERS =================
-
+// ================= LETTER =================
 
 
 function openLetter(num){
 
 
-
-    let letter=document.getElementById("letter"+num);
-
+let item=document.getElementById("letter"+num);
 
 
-    if(!letter){
-
-        return;
-
-    }
+if(item){
 
 
+item.classList.toggle("hidden");
 
 
-
-    if(letter.classList.contains("hidden")){
-
-
-        letter.classList.remove("hidden");
-
-        letter.classList.add("popup");
+if(!item.classList.contains("hidden")){
 
 
-        launchConfetti(80,70);
+item.classList.add("popup");
+
+launchConfetti(80,70);
+
+createHearts();
 
 
-        createHearts();
+}
 
 
-    }
-
-    else{
-
-
-        letter.classList.add("hidden");
-
-
-    }
+}
 
 
 }
@@ -1839,98 +1928,66 @@ function openLetter(num){
 
 
 
-
-
-
-// ================= LOVE TIMER =================
-
+// ================= TIMER =================
 
 
 let timerStarted=false;
 
 
-
 function startTimer(){
 
 
-
-    if(timerStarted){
-
-        return;
-
-    }
+if(timerStarted)return;
 
 
-    timerStarted=true;
+timerStarted=true;
 
 
-
-    let start=new Date("2024-03-20");
-
+let start=new Date("2024-03-20");
 
 
-    setInterval(()=>{
+setInterval(()=>{
 
 
-
-        let now=new Date();
-
-
-        let diff=now-start;
+let now=new Date();
 
 
-
-        let days=Math.floor(diff/(1000*60*60*24));
-
+let diff=now-start;
 
 
-        let hours=Math.floor(
+let days=Math.floor(diff/(1000*60*60*24));
 
-        (diff/(1000*60*60))%24
 
-        );
+let hours=Math.floor((diff/(1000*60*60))%24);
+
+
+let minutes=Math.floor((diff/(1000*60))%60);
+
+
+let seconds=Math.floor((diff/1000)%60);
 
 
 
-        let minutes=Math.floor(
-
-        (diff/(1000*60))%60
-
-        );
+let timer=document.getElementById("loveTimer");
 
 
+if(timer){
 
-        let seconds=Math.floor(
+timer.innerHTML=
 
-        (diff/1000)%60
+days+" Days ❤️ "+
 
-        );
+hours+" Hours ❤️ "+
 
+minutes+" Minutes ❤️ "+
 
-
-        let timer=document.getElementById("loveTimer");
-
-
-
-        if(timer){
+seconds+" Seconds";
 
 
-            timer.innerHTML=
-
-            days+" Days ❤️ "+
-
-            hours+" Hours ❤️ "+
-
-            minutes+" Minutes ❤️ "+
-
-            seconds+" Seconds";
+}
 
 
-        }
-
-
-
-    },1000);
+},1000);
 
 
 
@@ -1942,67 +1999,50 @@ function startTimer(){
 
 
 
-
-
-// ================= GIFT POPUP =================
-
+// ================= GIFT =================
 
 
 function openGift(){
 
 
-
-    launchConfetti(150,100);
-
+launchConfetti(150,100);
 
 
-    let popup=document.createElement("div");
+let popup=document.createElement("div");
 
 
-
-    popup.className="gift-popup";
-
+popup.className="gift-popup";
 
 
-    popup.innerHTML=`
+popup.innerHTML=`
+
+<div class="gift-gallery">
+
+<img src="gift1.jpg">
+
+<img src="gift2.jpg">
+
+<img src="gift3.jpg">
+
+<img src="gift4.jpg">
+
+</div>
 
 
-    <div class="gift-gallery">
+<p class="text-pink-600 font-bold mt-3">
 
+Tap image to close ❤️
 
-    <img src="gift1.jpg" loading="lazy">
+</p>
 
-    <img src="gift2.jpg" loading="lazy">
-
-    <img src="gift3.jpg" loading="lazy">
-
-    <img src="gift4.jpg" loading="lazy">
-
-
-    </div>
-
-
-    <p class="text-pink-600 font-bold mt-3">
-
-    Tap image to close ❤️
-
-    </p>
-
-
-    `;
+`;
 
 
 
-    popup.onclick=function(){
-
-        popup.remove();
-
-    };
+popup.onclick=()=>popup.remove();
 
 
-
-    document.body.appendChild(popup);
-
+document.body.appendChild(popup);
 
 
 }
@@ -2012,69 +2052,41 @@ function openGift(){
 
 
 
-
-
-
-// ================= HEART EFFECT =================
-
+// ================= HEARTS =================
 
 
 function createHearts(){
 
 
-
-    for(let i=0;i<40;i++){
-
+for(let i=0;i<40;i++){
 
 
-        let h=document.createElement("div");
+let h=document.createElement("div");
 
 
-
-        h.innerHTML="❤️";
-
+h.innerHTML="❤️";
 
 
-        h.className="heart";
+h.className="heart";
 
 
-
-        h.style.left=Math.random()*100+"vw";
-
+h.style.left=Math.random()*100+"vw";
 
 
-        h.style.fontSize=
+h.style.fontSize=(20+Math.random()*30)+"px";
 
-        (20+Math.random()*30)+"px";
+
+h.style.animationDuration=(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(h);
 
 
 
-        h.style.animationDuration=
-
-        (3+Math.random()*5)+"s";
+setTimeout(()=>h.remove(),8000);
 
 
-
-
-
-        document.body.appendChild(h);
-
-
-
-
-
-        setTimeout(()=>{
-
-
-            h.remove();
-
-
-        },8000);
-
-
-
-    }
-
+}
 
 
 }
@@ -2084,207 +2096,195 @@ function createHearts(){
 
 
 
-
-
-
-// ================= FINAL SURPRISE =================
-
+// ================= FINAL MOVING SCREEN =================
 
 
 function lastSurprise(){
 
 
+if(document.getElementById("finalScreen"))return;
 
-    launchConfetti(150,120);
 
+launchConfetti(200,120);
 
 
-    let final=document.createElement("div");
 
+let final=document.createElement("div");
 
 
-    final.style.position="fixed";
+final.id="finalScreen";
 
-    final.style.top="0";
 
-    final.style.left="0";
+final.style.position="fixed";
 
-    final.style.width="100%";
+final.style.inset="0";
 
-    final.style.height="100vh";
+final.style.background=
 
-    final.style.background=
+"linear-gradient(135deg,#ffd1dc,#ff9a9e,#fad0c4)";
 
-    "linear-gradient(135deg,#ffd1dc,#ff9a9e,#fad0c4)";
 
-    final.style.display="flex";
+final.style.display="flex";
 
-    final.style.alignItems="center";
+final.style.alignItems="center";
 
-    final.style.justifyContent="center";
+final.style.justifyContent="center";
 
-    final.style.flexDirection="column";
+final.style.flexDirection="column";
 
-    final.style.textAlign="center";
+final.style.textAlign="center";
 
-    final.style.color="white";
+final.style.color="white";
 
-    final.style.fontSize="clamp(20px,6vw,38px)";
+final.style.fontSize="clamp(20px,6vw,38px)";
 
-    final.style.fontWeight="bold";
+final.style.fontWeight="bold";
 
-    final.style.zIndex="9999";
+final.style.zIndex="9999";
 
-    final.style.overflow="hidden";
+final.style.overflow="hidden";
 
-    final.style.animation="popup 1s ease";
 
 
+document.body.appendChild(final);
 
-    document.body.appendChild(final);
 
 
 
+let messages=[
 
+"I Love You ❤️",
 
+"Forever Yours 💖",
 
+"My Happiness 🥰",
 
-    let loveMessages=[
+"My Favorite Person ❤️",
 
+"Always With You 💕",
 
-    "I Love You ❤️",
+"My Everything 🌹",
 
-    "Forever Yours 💖",
+"Love You Forever ♾️",
 
-    "My Happiness 🥰",
+"My Heart Is Yours ❤️",
 
-    "My Favorite Person ❤️",
+"You Are My World 🌎",
 
-    "Always With You 💕",
+"Together Forever 🥰"
 
-    "My Everything 🌹",
+];
 
-    "Love You Forever ♾️",
 
-    "My Heart Is Yours ❤️",
 
-    "You Are My World 🌎",
 
-    "Together Forever 🥰"
+messages.forEach(msg=>{
 
 
-    ];
+let t=document.createElement("div");
 
 
+t.innerHTML=msg;
 
 
+t.style.position="absolute";
 
 
-    loveMessages.forEach((msg,index)=>{
+t.style.left=Math.random()*70+"vw";
 
 
+t.style.top=Math.random()*70+"vh";
 
-        let text=document.createElement("div");
 
+t.style.fontSize="24px";
 
 
-        text.innerHTML=msg;
+t.style.textShadow="0 0 15px #ff1493";
 
 
+t.style.animation=
 
-        text.style.position="absolute";
+"floatMessage 5s infinite ease-in-out";
 
-        text.style.left=Math.random()*70+"vw";
 
-        text.style.top=Math.random()*70+"vh";
+final.appendChild(t);
 
-        text.style.fontSize=(18+Math.random()*18)+"px";
 
-        text.style.textShadow="0 0 15px #ff1493";
+});
 
-        text.style.animation=
 
-        "floatMessage "+
 
-        (5+Math.random()*5)+
 
-        "s infinite ease-in-out";
 
+for(let i=0;i<25;i++){
 
 
-        final.appendChild(text);
+let h=document.createElement("div");
 
 
+h.innerHTML="❤️";
 
-    });
 
+h.style.position="absolute";
 
 
+h.style.left=Math.random()*90+"%";
 
 
+h.style.top=Math.random()*90+"%";
 
-    for(let i=0;i<25;i++){
 
+h.style.fontSize="35px";
 
-        let heart=document.createElement("div");
 
+h.style.animation=
 
-        heart.innerHTML="❤️";
+"bounceLove 3s infinite ease-in-out";
 
 
-        heart.style.position="absolute";
-
-        heart.style.left=Math.random()*90+"%";
-
-        heart.style.top=Math.random()*90+"%";
-
-        heart.style.fontSize="35px";
-
-        heart.style.animation=
-
-        "bounceLove 3s infinite ease-in-out";
-
-
-        final.appendChild(heart);
-
-
-    }
-
-
-
-
-
-    for(let i=0;i<10;i++){
-
-
-        let kiss=document.createElement("div");
-
-
-        kiss.innerHTML="💋";
-
-
-        kiss.style.position="absolute";
-
-        kiss.style.left=Math.random()*90+"%";
-
-        kiss.style.top=Math.random()*90+"%";
-
-        kiss.style.fontSize="40px";
-
-        kiss.style.animation=
-
-        "bounceLove 4s infinite ease-in-out";
-
-
-        final.appendChild(kiss);
-
-
-    }
+final.appendChild(h);
 
 
 }
 
 
+
+
+
+for(let i=0;i<10;i++){
+
+
+let k=document.createElement("div");
+
+
+k.innerHTML="💋";
+
+
+k.style.position="absolute";
+
+
+k.style.left=Math.random()*90+"%";
+
+
+k.style.top=Math.random()*90+"%";
+
+
+k.style.fontSize="40px";
+
+
+k.style.animation=
+
+"bounceLove 4s infinite ease-in-out";
+
+
+final.appendChild(k);
+
+
+}
+
+
+
+}
 
 
 
@@ -2294,42 +2294,40 @@ function lastSurprise(){
 // ================= AUDIO CONTROL =================
 
 
-
 function pauseLoveSong(){
 
 
-    let loveAudio=document.getElementById("loveAudio");
+let a=document.getElementById("loveAudio");
 
 
-    if(loveAudio && !loveAudio.paused){
+if(a&&!a.paused){
 
-        loveAudio.pause();
-
-    }
-
+a.pause();
 
 }
 
-
+}
 
 
 
 function resumeLoveSong(){
 
 
-    let loveAudio=document.getElementById("loveAudio");
+let a=document.getElementById("loveAudio");
 
 
-    if(loveAudio){
+if(a){
 
-        loveAudio.play().catch(()=>{});
-
-    }
-
+a.play().catch(()=>{});
 
 }
 
+}
+
+
+
 </script>
+
 
 </body>
 
