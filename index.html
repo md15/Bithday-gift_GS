@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <meta name="theme-color" content="#ff9a9e">
 
@@ -23,13 +23,23 @@
     box-sizing:border-box;
 }
 
+
+/* MOBILE PAGE FIX */
+
+.hidden{
+    display:none !important;
+}
+
+
 html,body{
 
     width:100%;
     min-height:100%;
     overflow-x:hidden;
+    -webkit-text-size-adjust:100%;
 
 }
+
 
 body{
 
@@ -37,6 +47,7 @@ body{
     -webkit-tap-highlight-color:transparent;
 
 }
+
 
 
 /* CARD */
@@ -61,6 +72,7 @@ body{
 }
 
 
+
 /* POPUP */
 
 .popup{
@@ -72,19 +84,19 @@ body{
 
 @keyframes popup{
 
-    from{
+from{
 
-        opacity:0;
-        transform:scale(.5);
+opacity:0;
+transform:scale(.5);
 
-    }
+}
 
-    to{
+to{
 
-        opacity:1;
-        transform:scale(1);
+opacity:1;
+transform:scale(1);
 
-    }
+}
 
 }
 
@@ -103,16 +115,18 @@ body{
 }
 
 
+
 @keyframes fall{
 
-    to{
+to{
 
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-
-    }
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
 
 }
+
+}
+
 
 
 
@@ -120,71 +134,77 @@ body{
 
 .cake-area{
 
-    margin-top:30px;
-    cursor:pointer;
+margin-top:30px;
+cursor:pointer;
 
 }
 
 
 .single-cake{
 
-    font-size:clamp(60px,20vw,100px);
-    display:inline-block;
-    transition:1s;
+font-size:clamp(60px,20vw,100px);
+display:inline-block;
+transition:1s;
 
 }
 
 
 .cut-cake{
 
-    animation:cakeCut 1s forwards;
+animation:cakeCut 1s forwards;
 
 }
 
 
 @keyframes cakeCut{
 
-    50%{
+50%{
 
-        transform:scale(1.25);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
+transform:scale(1.25);
 
 }
+
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
 
 
 .cake-piece{
 
-    font-size:clamp(50px,18vw,85px);
-    display:inline-block;
-    animation:piecePop 1s ease;
+font-size:clamp(50px,18vw,85px);
+display:inline-block;
+animation:piecePop 1s ease;
 
 }
+
 
 
 @keyframes piecePop{
 
-    from{
+from{
 
-        opacity:0;
-        transform:scale(.3) rotate(-40deg);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:scale(1) rotate(0);
-
-    }
+opacity:0;
+transform:scale(.3) rotate(-40deg);
 
 }
+
+
+to{
+
+opacity:1;
+transform:scale(1) rotate(0);
+
+}
+
+}
+
+
 
 
 
@@ -192,24 +212,26 @@ body{
 
 .birthday-text{
 
-    font-size:clamp(18px,5vw,24px);
-    font-weight:bold;
-    color:#f59e0b;
-    text-shadow:0 2px 8px #ffb6c1;
-    animation:pulse 1.5s infinite;
+font-size:clamp(18px,5vw,24px);
+font-weight:bold;
+color:#f59e0b;
+text-shadow:0 2px 8px #ffb6c1;
+animation:pulse 1.5s infinite;
 
 }
 
 
 @keyframes pulse{
 
-    50%{
+50%{
 
-        transform:scale(1.1);
-
-    }
+transform:scale(1.1);
 
 }
+
+}
+
+
 
 
 
@@ -217,40 +239,16 @@ body{
 
 .letter{
 
-    background:#fff0f5;
-    padding:20px;
-    border-radius:25px;
-    margin-top:20px;
-    cursor:pointer;
-    box-shadow:0 10px 25px #0002;
+background:#fff0f5;
+padding:20px;
+border-radius:25px;
+margin-top:20px;
+cursor:pointer;
+box-shadow:0 10px 25px #0002;
 
 }
 
 
-
-/* KISS */
-
-.kiss{
-
-    position:fixed;
-    bottom:0;
-    animation:kiss 3s forwards;
-    font-size:40px;
-    z-index:100;
-
-}
-
-
-@keyframes kiss{
-
-    to{
-
-        transform:translateY(-100vh) rotate(360deg);
-        opacity:0;
-
-    }
-
-}
 
 
 
@@ -258,107 +256,103 @@ body{
 
 .gift-popup{
 
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) scale(0);
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
 
-    background:white;
+background:white;
 
-    padding:20px;
+padding:20px;
 
-    border-radius:25px;
+border-radius:25px;
 
-    box-shadow:0 10px 40px #0005;
+box-shadow:0 10px 40px #0005;
 
-    z-index:9999;
+z-index:9999;
 
-    animation:giftShow .6s forwards;
+animation:giftShow .6s forwards;
 
-    max-width:95%;
+max-width:95%;
 
-    max-height:90vh;
+max-height:90vh;
 
-    overflow:auto;
+overflow:auto;
 
 }
+
 
 
 .gift-gallery{
 
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
 
 }
+
 
 
 .gift-gallery img{
 
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    border-radius:20px;
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:20px;
 
 }
+
 
 
 @keyframes giftShow{
 
-    to{
+to{
 
-        transform:translate(-50%,-50%) scale(1);
+transform:translate(-50%,-50%) scale(1);
 
-    }
+}
 
 }
 
 
 
-/* FINAL SCREEN ELEMENTS */
-
-.bounce-love{
-
-    position:absolute;
-    z-index:10000;
-    animation:bounceLove 3s infinite ease-in-out;
-
-}
 
 
+/* FINAL PAGE ANIMATIONS */
 
 @keyframes bounceLove{
 
 
 0%,100%{
 
-    transform:translateY(0) scale(1) rotate(0deg);
+transform:translateY(0) scale(1) rotate(0deg);
 
 }
 
 
 25%{
 
-    transform:translateY(-50px) scale(1.2) rotate(20deg);
+transform:translateY(-50px) scale(1.2) rotate(20deg);
 
 }
 
 
 50%{
 
-    transform:translateY(20px) scale(1) rotate(-20deg);
+transform:translateY(20px) scale(1) rotate(-20deg);
 
 }
 
 
 75%{
 
-    transform:translateY(-30px) scale(1.1) rotate(10deg);
+transform:translateY(-30px) scale(1.1) rotate(10deg);
 
 }
 
 
 }
+
 
 
 
@@ -367,40 +361,42 @@ body{
 
 0%{
 
-    transform:translate(0,0) rotate(0deg);
+transform:translate(0,0) rotate(0deg);
 
 }
 
 
 25%{
 
-    transform:translate(30px,-30px) rotate(5deg);
+transform:translate(30px,-30px) rotate(5deg);
 
 }
 
 
 50%{
 
-    transform:translate(-30px,30px) rotate(-5deg);
+transform:translate(-30px,30px) rotate(-5deg);
 
 }
 
 
 75%{
 
-    transform:translate(30px,20px) rotate(5deg);
+transform:translate(30px,20px) rotate(5deg);
 
 }
 
 
 100%{
 
-    transform:translate(0,0) rotate(0deg);
+transform:translate(0,0) rotate(0deg);
 
 }
 
 
 }
+
+
 
 
 
@@ -408,22 +404,25 @@ body{
 
 img{
 
-    max-width:100%;
-    height:auto;
+max-width:100%;
+height:auto;
+display:block;
 
 }
 
 
 audio{
 
-    max-width:100%;
+max-width:100%;
+width:100%;
 
 }
 
 
 button{
 
-    touch-action:manipulation;
+touch-action:manipulation;
+font-size:16px;
 
 }
 
@@ -434,36 +433,37 @@ button{
 
 .card{
 
-    padding:20px!important;
+padding:20px!important;
 
 }
 
 
 .text-5xl{
 
-    font-size:2rem!important;
+font-size:2rem!important;
 
 }
 
 
 .text-6xl{
 
-    font-size:3rem!important;
+font-size:3rem!important;
 
 }
 
 
 .gift-gallery{
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
 }
 
 
 }
+
+
 
 </style>
-
 
 </head>
 
@@ -483,7 +483,6 @@ webkit-playsinline>
 </audio>
 
 
-
 <audio
 id="loveAudio"
 preload="auto"
@@ -497,6 +496,7 @@ webkit-playsinline>
 
 
 
+
 <div class="card bg-white rounded-3xl shadow-2xl w-full max-w-lg text-center p-6">
 
 
@@ -504,7 +504,7 @@ webkit-playsinline>
 <!-- ================= PAGE 1 ================= -->
 
 
-<div id="initial">
+<div id="initial" style="display:block;">
 
 
 
@@ -519,7 +519,7 @@ webkit-playsinline>
 
 <p class="mt-6 text-xl text-gray-700">
 
-🎂❤️ <b>Happy Birthday My Lovee ❤️</b>
+🎂❤️ <b>Happy Birthday My Love ❤️</b>
 
 </p>
 
@@ -531,6 +531,7 @@ webkit-playsinline>
 Wishing you a day filled with endless happiness, laughter, love, and everything your heart desires 😊✨
 
 May this year bring you success, good health, endless blessings, and countless reasons to smile 🌟💫
+
 
 <br><br>
 
@@ -624,6 +625,10 @@ Click for Surprise 🎊
 
 </div>
 
+
+
+
+
 <!-- ================= PAGE 2 ================= -->
 
 
@@ -656,6 +661,7 @@ Happy Birthday to the most special person in my life ❤❤
 
 🌹 Today is the most beautiful day because it's the day the most precious person in my life was born. 🎈✨
 
+
 Every moment with you is a gift 🎁, and every memory we create together becomes a treasure 💎 that I will cherish forever. ♾️💖
 
 
@@ -664,9 +670,11 @@ Every moment with you is a gift 🎁, and every memory we create together become
 
 🥰 You are my happiness 😊, my peace 🕊️, my biggest strength 💪, and the reason my heart smiles every single day. ❤️
 
+
 Thank you for filling my life with endless love 💕, laughter 😂, and countless beautiful memories 📸✨.
 
-I can't imagine my world 🌎 without you 💞
+
+I can't imagine my world without you 💞
 
 
 <br><br>
@@ -675,17 +683,17 @@ I can't imagine my world 🌎 without you 💞
 🎊 On your special day 🎂, I wish you endless happiness 😍, good health 🌿, success 🏆, and every dream you've ever wished for 🌟.
 
 
-May your smile 😊 always shine as brightly ✨ as it does today, and may your heart ❤️ always be filled with love 💕 and joy 🌈.
-
-
 <br><br>
 
 
 🤝 I promise to stand beside you through every happiness 😇 and every challenge 🌧️,
 
+
 to hold your hand 🤲,
 
+
 to support your dreams 🌠,
+
 
 and to love you a little more with every sunrise 🌅 and every sunset 🌇.
 
@@ -696,16 +704,19 @@ and to love you a little more with every sunrise 🌅 and every sunset 🌇.
 💑 No matter where life takes us 🛤️, my heart ❤️ will always choose you.
 
 
+<br><br>
+
+
 You are my favorite person 🥰,
+
 
 my safe place 🏡,
 
+
 my greatest blessing 🙏,
 
+
 and the most beautiful chapter 📖 of my life.
-
-
-Loving you 💕 is the best thing that has ever happened to me. ✨
 
 
 <br><br>
@@ -713,15 +724,11 @@ Loving you 💕 is the best thing that has ever happened to me. ✨
 
 💖 I love you more than words can ever express 🥹,
 
+
 more than the stars in the sky 🌌✨,
 
+
 and more than every heartbeat in my heart 💓.
-
-
-My love for you grows stronger every single day 🌱❤️.
-
-
-I hope this birthday 🎂 marks the beginning of your happiest 😊 and most beautiful year yet 🌸🌟.
 
 
 <br><br>
@@ -760,10 +767,10 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 
 
+
 </div>
 
 <!-- ================= PAGE 3 ================= -->
-
 
 <div id="memoriesPage" class="hidden">
 
@@ -996,7 +1003,6 @@ Thank you for making my life beautiful ❤️
 
 
 
-
 <!-- SECRET LETTERS -->
 
 
@@ -1005,7 +1011,6 @@ Thank you for making my life beautiful ❤️
 💌 Secret Love Letters
 
 </h2>
-
 
 
 
@@ -1106,6 +1111,7 @@ You are my forever person ❤️
 
 
 
+
 <!-- GIFT -->
 
 
@@ -1134,6 +1140,8 @@ Tap gift box 🎁
 
 
 </div>
+
+
 
 
 
@@ -1192,7 +1200,6 @@ onended="resumeLoveSong()">
 
 
 
-
 <button
 
 onclick="lastSurprise()"
@@ -1204,6 +1211,7 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 
 </button>
+
 
 
 
@@ -1269,7 +1277,6 @@ function cutCake(){
 
 
 
-
     let cutText=document.getElementById("cutText");
 
 
@@ -1326,6 +1333,7 @@ function cutCake(){
 
 
 
+
 // ================= PAGE 1 TO PAGE 2 =================
 
 
@@ -1366,7 +1374,6 @@ function openSurprise(){
 
 
 
-
     let loveAudio=document.getElementById("loveAudio");
 
 
@@ -1386,12 +1393,12 @@ function openSurprise(){
     launchConfetti(250,120);
 
 
-
     createHearts();
 
 
 
 }
+
 
 
 
@@ -1424,12 +1431,12 @@ function finalSurprise(){
     startTimer();
 
 
-
     createHearts();
 
 
 
 }
+
 
 
 
@@ -1479,6 +1486,8 @@ function showMemory(num){
 
 
 }
+
+
 
 
 
@@ -1539,6 +1548,8 @@ function openLetter(num){
 
 
 }
+
+
 
 
 
@@ -1642,6 +1653,12 @@ function startTimer(){
 
 
 
+
+
+
+
+
+
 // ================= GIFT =================
 
 
@@ -1662,6 +1679,7 @@ function openGift(){
 
     popup.innerHTML=`
 
+
     <div class="gift-gallery">
 
 
@@ -1677,11 +1695,13 @@ function openGift(){
     </div>
 
 
+
     <p class="text-pink-600 font-bold mt-3">
 
     Tap image to close ❤️
 
     </p>
+
 
     `;
 
@@ -1749,6 +1769,7 @@ function createHearts(){
 
 
 
+
         document.body.appendChild(h);
 
 
@@ -1779,6 +1800,7 @@ function createHearts(){
 
 
 
+
 // ================= FINAL SURPRISE =================
 
 
@@ -1788,6 +1810,7 @@ function lastSurprise(){
 
 
     launchConfetti(150,120);
+
 
 
 
@@ -1824,21 +1847,24 @@ function lastSurprise(){
 
     final.style.textAlign="center";
 
+
+
     final.style.color="white";
 
     final.style.fontSize="clamp(20px,6vw,38px)";
 
     final.style.fontWeight="bold";
 
+
+
     final.style.zIndex="9999";
 
     final.style.overflow="hidden";
 
-    final.style.animation="popup 2s ease";
-
 
 
     document.body.appendChild(final);
+
 
 
 
@@ -1867,22 +1893,12 @@ function lastSurprise(){
 
     "You Are My World 🌎",
 
-    "My Dream Come True ✨",
-
-    "I Choose You Always ❤️",
-
-    "Forever And Always 💍",
-
-    "You Make Me Smile 😊",
-
-    "My Beautiful Love 🌸",
-
-    "Endless Love For You 💖",
-
     "Together Forever 🥰"
 
 
     ];
+
+
 
 
 
@@ -1914,6 +1930,7 @@ function lastSurprise(){
 
 
         text.style.fontSize=
+
         (18+Math.random()*18)+"px";
 
 
@@ -1931,18 +1948,23 @@ function lastSurprise(){
 
 
         text.style.textShadow=
+
         "0 0 15px #ff1493";
 
 
 
         text.style.animation=
+
         "floatMessage "+
+
         (5+Math.random()*5)+
+
         "s infinite ease-in-out";
 
 
 
         text.style.animationDelay=
+
         (index*0.3)+"s";
 
 
@@ -1986,6 +2008,7 @@ function lastSurprise(){
 
 
         heart.style.animation=
+
         "bounceLove 3s infinite ease-in-out";
 
 
@@ -2029,6 +2052,7 @@ function lastSurprise(){
 
 
         kiss.style.animation=
+
         "bounceLove 4s infinite ease-in-out";
 
 
@@ -2058,7 +2082,6 @@ function lastSurprise(){
 function pauseLoveSong(){
 
 
-
     let loveAudio=document.getElementById("loveAudio");
 
 
@@ -2074,6 +2097,7 @@ function pauseLoveSong(){
 
 
 }
+
 
 
 
@@ -2101,34 +2125,7 @@ function resumeLoveSong(){
 
 
 
-function stopLoveSong(){
-
-
-
-    let loveAudio=document.getElementById("loveAudio");
-
-
-
-    if(loveAudio){
-
-
-        loveAudio.pause();
-
-        loveAudio.currentTime=0;
-
-
-    }
-
-
-
-}
-
-
-
-
-
 </script>
-
 
 
 </body>
