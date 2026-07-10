@@ -19,98 +19,198 @@
 
 <style>
 
+/* ================= GLOBAL ================= */
+
 *{
     box-sizing:border-box;
 }
 
 
-/* MOBILE PAGE FIX */
-
-.hidden{
-    display:none !important;
-}
-
-
-html,body{
+html,
+body{
 
     width:100%;
     min-height:100%;
+
     overflow-x:hidden;
+
     -webkit-text-size-adjust:100%;
 
 }
 
 
+
 body{
 
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    margin:0;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4,
+        #ffd1dc
+    );
+
     -webkit-tap-highlight-color:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+
+    env(safe-area-inset-top)
+    16px
+    env(safe-area-inset-bottom);
 
 }
 
 
 
-/* CARD */
+/* ================= PAGE CONTROL ================= */
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+
+#message,
+#memoriesPage{
+
+    display:none;
+
+}
+
+
+
+/* ================= MAIN CARD ================= */
+
 
 .card{
 
-    animation:float 3s infinite ease-in-out;
+    width:100%;
+
+    max-width:520px;
+
+
+    background:
+
+    rgba(255,255,255,.94);
+
+
+    backdrop-filter:
+
+    blur(12px);
+
+
+    border-radius:32px;
+
+
+    padding:25px;
+
+
+    box-shadow:
+
+    0 20px 60px rgba(255,70,120,.25);
+
+
+    animation:
+
+    float 3s infinite ease-in-out;
+
 
 }
+
+
 
 
 @keyframes float{
 
-    0%,100%{
-        transform:translateY(0);
-    }
 
-    50%{
-        transform:translateY(-8px);
-    }
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
 
 }
 
 
 
-/* POPUP */
+
+
+/* ================= POPUP ================= */
+
 
 .popup{
 
-    animation:popup .8s ease;
+animation:
+
+popup .8s ease;
 
 }
+
 
 
 @keyframes popup{
 
+
 from{
 
 opacity:0;
-transform:scale(.5);
+
+transform:scale(.85) translateY(20px);
 
 }
+
 
 to{
 
 opacity:1;
-transform:scale(1);
+
+transform:scale(1) translateY(0);
 
 }
 
+
 }
 
 
 
-/* HEART FALL */
+
+
+/* ================= HEARTS ================= */
+
 
 .heart{
 
-    position:fixed;
-    top:-20px;
-    z-index:50;
-    pointer-events:none;
-    animation:fall linear forwards;
+position:fixed;
+
+top:-20px;
+
+z-index:50;
+
+pointer-events:none;
+
+animation:
+
+fall linear forwards;
 
 }
 
@@ -118,9 +218,16 @@ transform:scale(1);
 
 @keyframes fall{
 
+
 to{
 
-transform:translateY(110vh) rotate(360deg);
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
+
+
 opacity:0;
 
 }
@@ -130,33 +237,63 @@ opacity:0;
 
 
 
-/* CAKE */
+
+/* ================= CAKE ================= */
+
 
 .cake-area{
 
 margin-top:30px;
+
 cursor:pointer;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#fff0f5,
+
+#ffe4ec
+
+);
+
+
+border-radius:25px;
+
+padding:20px;
 
 }
 
 
+
 .single-cake{
 
-font-size:clamp(60px,20vw,100px);
+font-size:
+
+clamp(65px,20vw,100px);
+
 display:inline-block;
+
 transition:1s;
 
 }
 
 
+
 .cut-cake{
 
-animation:cakeCut 1s forwards;
+animation:
+
+cakeCut 1s forwards;
 
 }
 
 
+
 @keyframes cakeCut{
+
 
 50%{
 
@@ -171,15 +308,22 @@ transform:scale(1);
 
 }
 
+
 }
 
 
 
 .cake-piece{
 
-font-size:clamp(50px,18vw,85px);
+font-size:
+
+clamp(50px,18vw,85px);
+
 display:inline-block;
-animation:piecePop 1s ease;
+
+animation:
+
+piecePop 1s ease;
 
 }
 
@@ -187,10 +331,16 @@ animation:piecePop 1s ease;
 
 @keyframes piecePop{
 
+
 from{
 
 opacity:0;
-transform:scale(.3) rotate(-40deg);
+
+transform:
+
+scale(.3)
+
+rotate(-40deg);
 
 }
 
@@ -198,30 +348,55 @@ transform:scale(.3) rotate(-40deg);
 to{
 
 opacity:1;
-transform:scale(1) rotate(0);
+
+transform:
+
+scale(1)
+
+rotate(0);
 
 }
 
+
 }
 
 
 
 
 
-/* BIRTHDAY TEXT */
+/* ================= TEXT ================= */
+
 
 .birthday-text{
 
-font-size:clamp(18px,5vw,24px);
+
+font-size:
+
+clamp(18px,5vw,26px);
+
+
 font-weight:bold;
-color:#f59e0b;
-text-shadow:0 2px 8px #ffb6c1;
-animation:pulse 1.5s infinite;
+
+
+color:#ff4d88;
+
+
+text-shadow:
+
+0 2px 10px #ffb6c1;
+
+
+animation:
+
+pulse 1.5s infinite;
+
 
 }
 
 
+
 @keyframes pulse{
+
 
 50%{
 
@@ -235,16 +410,41 @@ transform:scale(1.1);
 
 
 
-/* LETTER */
+/* ================= LETTERS ================= */
+
 
 .letter{
 
-background:#fff0f5;
-padding:20px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#fff0f5,
+
+#ffe5ee
+
+);
+
+
+padding:22px;
+
+
 border-radius:25px;
+
+
 margin-top:20px;
+
+
 cursor:pointer;
-box-shadow:0 10px 25px #0002;
+
+
+box-shadow:
+
+0 10px 25px #0002;
+
 
 }
 
@@ -252,32 +452,130 @@ box-shadow:0 10px 25px #0002;
 
 
 
-/* GIFT POPUP */
+/* ================= IMAGES ================= */
+
+
+img{
+
+
+max-width:100%;
+
+height:auto;
+
+display:block;
+
+
+}
+
+
+
+
+
+/* ================= AUDIO ================= */
+
+
+audio{
+
+
+width:100%;
+
+max-width:100%;
+
+
+}
+
+
+
+
+
+/* ================= BUTTONS ================= */
+
+
+button{
+
+
+touch-action:manipulation;
+
+
+border-radius:18px!important;
+
+
+font-weight:700;
+
+
+box-shadow:
+
+0 8px 20px rgba(255,0,80,.25);
+
+
+transition:.3s;
+
+
+}
+
+
+
+button:active{
+
+transform:scale(.94);
+
+}
+
+
+
+
+
+/* ================= GIFT POPUP ================= */
+
 
 .gift-popup{
 
+
 position:fixed;
+
+
 top:50%;
+
 left:50%;
-transform:translate(-50%,-50%) scale(0);
+
+
+transform:
+
+translate(-50%,-50%)
+
+scale(0);
+
 
 background:white;
 
-padding:20px;
 
-border-radius:25px;
+padding:22px;
 
-box-shadow:0 10px 40px #0005;
+
+border-radius:30px;
+
+
+box-shadow:
+
+0 20px 50px #0005;
+
 
 z-index:9999;
 
-animation:giftShow .6s forwards;
+
+animation:
+
+giftShow .6s forwards;
+
 
 max-width:95%;
 
+
 max-height:90vh;
 
+
 overflow:auto;
+
 
 }
 
@@ -285,9 +583,13 @@ overflow:auto;
 
 .gift-gallery{
 
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:15px;
+
 
 }
 
@@ -295,10 +597,15 @@ gap:15px;
 
 .gift-gallery img{
 
-width:100%;
-aspect-ratio:1/1;
+
+aspect-ratio:1;
+
+
 object-fit:cover;
-border-radius:20px;
+
+
+border-radius:22px;
+
 
 }
 
@@ -306,9 +613,14 @@ border-radius:20px;
 
 @keyframes giftShow{
 
+
 to{
 
-transform:translate(-50%,-50%) scale(1);
+transform:
+
+translate(-50%,-50%)
+
+scale(1);
 
 }
 
@@ -318,78 +630,48 @@ transform:translate(-50%,-50%) scale(1);
 
 
 
-/* FINAL PAGE ANIMATIONS */
+/* ================= FINAL ANIMATION ================= */
+
 
 @keyframes bounceLove{
 
 
 0%,100%{
 
-transform:translateY(0) scale(1) rotate(0deg);
+transform:
 
-}
-
-
-25%{
-
-transform:translateY(-50px) scale(1.2) rotate(20deg);
+translateY(0)
+scale(1)
+rotate(0);
 
 }
 
 
 50%{
 
-transform:translateY(20px) scale(1) rotate(-20deg);
+transform:
 
-}
-
-
-75%{
-
-transform:translateY(-30px) scale(1.1) rotate(10deg);
+translateY(-30px)
+scale(1.15)
+rotate(15deg);
 
 }
 
 
 }
-
 
 
 
 @keyframes floatMessage{
 
 
-0%{
-
-transform:translate(0,0) rotate(0deg);
-
-}
-
-
-25%{
-
-transform:translate(30px,-30px) rotate(5deg);
-
-}
-
-
 50%{
 
-transform:translate(-30px,30px) rotate(-5deg);
+transform:
 
-}
+translate(20px,-20px)
 
-
-75%{
-
-transform:translate(30px,20px) rotate(5deg);
-
-}
-
-
-100%{
-
-transform:translate(0,0) rotate(0deg);
+rotate(5deg);
 
 }
 
@@ -400,49 +682,41 @@ transform:translate(0,0) rotate(0deg);
 
 
 
-/* MOBILE FIXES */
-
-img{
-
-max-width:100%;
-height:auto;
-display:block;
-
-}
-
-
-audio{
-
-max-width:100%;
-width:100%;
-
-}
-
-
-button{
-
-touch-action:manipulation;
-font-size:16px;
-
-}
-
+/* ================= MOBILE ================= */
 
 
 @media(max-width:640px){
 
 
+body{
+
+align-items:flex-start;
+
+padding:12px;
+
+
+}
+
+
+
 .card{
+
+
+margin-top:10px;
 
 padding:20px!important;
 
+
 }
+
 
 
 .text-5xl{
 
-font-size:2rem!important;
+font-size:2.2rem!important;
 
 }
+
 
 
 .text-6xl{
@@ -452,11 +726,13 @@ font-size:3rem!important;
 }
 
 
+
 .gift-gallery{
 
 grid-template-columns:1fr;
 
 }
+
 
 
 }
@@ -467,8 +743,8 @@ grid-template-columns:1fr;
 
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-4">
 
+<body>
 
 <!-- AUDIO FILES -->
 
@@ -496,15 +772,16 @@ webkit-playsinline>
 
 
 
+<!-- MAIN CARD -->
 
-<div class="card bg-white rounded-3xl shadow-2xl w-full max-w-lg text-center p-6">
+<div class="card text-center">
 
 
 
 <!-- ================= PAGE 1 ================= -->
 
 
-<div id="initial" style="display:block;">
+<div id="initial">
 
 
 
@@ -526,9 +803,14 @@ webkit-playsinline>
 
 
 
-<p class="mt-4 text-gray-500">
+<div class="mt-5 text-gray-500 leading-relaxed px-2">
+
 
 Wishing you a day filled with endless happiness, laughter, love, and everything your heart desires 😊✨
+
+
+<br><br>
+
 
 May this year bring you success, good health, endless blessings, and countless reasons to smile 🌟💫
 
@@ -537,6 +819,7 @@ May this year bring you success, good health, endless blessings, and countless r
 
 
 Thank you for bringing so much joy, warmth, and positivity into my life 💕🌸
+
 
 Every moment with you is a beautiful memory that I cherish forever 🥰✨
 
@@ -552,10 +835,11 @@ I'll always be by your side, supporting you, loving you endlessly, and making un
 
 Enjoy your special day to the fullest 🎈🎁
 
+
 Keep smiling, keep shining, and always remember how special and loved you are 💖✨
 
 
-</p>
+</div>
 
 
 
@@ -574,7 +858,6 @@ Keep smiling, keep shining, and always remember how special and loved you are �
 🎂
 
 </div>
-
 
 
 
@@ -598,7 +881,8 @@ Tap cake to cut 🎂✨
 
 
 
-<div class="text-5xl mt-5">
+
+<div class="text-5xl mt-6">
 
 🎁🎉💖
 
@@ -609,8 +893,8 @@ Tap cake to cut 🎂✨
 
 
 
-
 <button
+
 onclick="openSurprise()"
 
 class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl shadow-lg">
@@ -624,9 +908,6 @@ Click for Surprise 🎊
 
 
 </div>
-
-
-
 
 
 <!-- ================= PAGE 2 ================= -->
@@ -645,10 +926,13 @@ Click for Surprise 🎊
 
 
 
-<p class="mt-5 text-gray-700 text-base sm:text-lg leading-relaxed">
+
+<div class="mt-5 text-gray-700 leading-relaxed px-2">
+
 
 
 🎂❤️ <strong>Happy Birthday, My Love! ❤️🎉</strong>
+
 
 <br><br>
 
@@ -662,6 +946,9 @@ Happy Birthday to the most special person in my life ❤❤
 🌹 Today is the most beautiful day because it's the day the most precious person in my life was born. 🎈✨
 
 
+<br><br>
+
+
 Every moment with you is a gift 🎁, and every memory we create together becomes a treasure 💎 that I will cherish forever. ♾️💖
 
 
@@ -669,6 +956,9 @@ Every moment with you is a gift 🎁, and every memory we create together become
 
 
 🥰 You are my happiness 😊, my peace 🕊️, my biggest strength 💪, and the reason my heart smiles every single day. ❤️
+
+
+<br><br>
 
 
 Thank you for filling my life with endless love 💕, laughter 😂, and countless beautiful memories 📸✨.
@@ -689,10 +979,19 @@ I can't imagine my world without you 💞
 🤝 I promise to stand beside you through every happiness 😇 and every challenge 🌧️,
 
 
+<br><br>
+
+
 to hold your hand 🤲,
 
 
+<br>
+
+
 to support your dreams 🌠,
+
+
+<br>
 
 
 and to love you a little more with every sunrise 🌅 and every sunset 🌇.
@@ -710,10 +1009,19 @@ and to love you a little more with every sunrise 🌅 and every sunset 🌇.
 You are my favorite person 🥰,
 
 
+<br>
+
+
 my safe place 🏡,
 
 
+<br>
+
+
 my greatest blessing 🙏,
+
+
+<br>
 
 
 and the most beautiful chapter 📖 of my life.
@@ -725,7 +1033,13 @@ and the most beautiful chapter 📖 of my life.
 💖 I love you more than words can ever express 🥹,
 
 
+<br>
+
+
 more than the stars in the sky 🌌✨,
+
+
+<br>
 
 
 and more than every heartbeat in my heart 💓.
@@ -737,7 +1051,8 @@ and more than every heartbeat in my heart 💓.
 💍 Forever yours, always and completely. 💖✨
 
 
-</p>
+
+</div>
 
 
 
@@ -754,6 +1069,7 @@ and more than every heartbeat in my heart 💓.
 
 
 <button
+
 onclick="finalSurprise()"
 
 class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
@@ -766,11 +1082,15 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 
 
-
-
 </div>
 
+
+
+
+
+
 <!-- ================= PAGE 3 ================= -->
+
 
 <div id="memoriesPage" class="hidden">
 
@@ -795,10 +1115,12 @@ Every picture has a beautiful memory ❤️
 
 
 
+
+
 <!-- TIMER -->
 
 
-<div class="bg-pink-100 rounded-2xl p-5 mt-8 shadow">
+<div class="bg-pink-100 rounded-3xl p-5 mt-8 shadow-lg">
 
 
 <h2 class="text-2xl font-bold text-pink-600">
@@ -822,11 +1144,10 @@ Loading...
 
 
 
+<!-- PHOTO CARDS -->
 
-<!-- PHOTO 1 -->
 
-
-<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8 overflow-hidden">
 
 
 <img
@@ -836,12 +1157,9 @@ alt="Our Special Moment"
 
 loading="lazy"
 
-decoding="async"
-
 onclick="showMemory(1)"
 
 class="rounded-2xl w-full h-80 object-cover">
-
 
 
 <h2 class="text-xl text-pink-600 font-bold mt-3">
@@ -851,8 +1169,7 @@ class="rounded-2xl w-full h-80 object-cover">
 </h2>
 
 
-
-<p id="memory1" class="hidden">
+<p id="memory1" class="hidden mt-3">
 
 This moment became special because I was with you ❤️
 
@@ -865,28 +1182,19 @@ This moment became special because I was with you ❤️
 
 
 
-
-
-<!-- PHOTO 2 -->
-
-
-<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8 overflow-hidden">
 
 
 <img
-
 src="Pic2.jpg"
 
 alt="Beautiful Smile"
 
 loading="lazy"
 
-decoding="async"
-
 onclick="showMemory(2)"
 
 class="rounded-2xl w-full h-80 object-cover">
-
 
 
 <h2 class="text-xl text-pink-600 font-bold mt-3">
@@ -896,8 +1204,7 @@ class="rounded-2xl w-full h-80 object-cover">
 </h2>
 
 
-
-<p id="memory2" class="hidden">
+<p id="memory2" class="hidden mt-3">
 
 Your smile makes my world brighter 😊❤️
 
@@ -910,28 +1217,19 @@ Your smile makes my world brighter 😊❤️
 
 
 
-
-
-<!-- PHOTO 3 -->
-
-
-<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8 overflow-hidden">
 
 
 <img
-
 src="Pic3.jpg"
 
 alt="Forever Together"
 
 loading="lazy"
 
-decoding="async"
-
 onclick="showMemory(3)"
 
 class="rounded-2xl w-full h-80 object-cover">
-
 
 
 <h2 class="text-xl text-pink-600 font-bold mt-3">
@@ -941,8 +1239,7 @@ class="rounded-2xl w-full h-80 object-cover">
 </h2>
 
 
-
-<p id="memory3" class="hidden">
+<p id="memory3" class="hidden mt-3">
 
 Every memory with you is a treasure 💕
 
@@ -955,28 +1252,19 @@ Every memory with you is a treasure 💕
 
 
 
-
-
-<!-- PHOTO 4 -->
-
-
-<div class="bg-white rounded-3xl shadow-xl p-4 mt-8">
+<div class="bg-white rounded-3xl shadow-xl p-4 mt-8 overflow-hidden">
 
 
 <img
-
 src="Pic4.jpg"
 
 alt="My Favorite Person"
 
 loading="lazy"
 
-decoding="async"
-
 onclick="showMemory(4)"
 
 class="rounded-2xl w-full h-80 object-cover">
-
 
 
 <h2 class="text-xl text-pink-600 font-bold mt-3">
@@ -986,8 +1274,7 @@ class="rounded-2xl w-full h-80 object-cover">
 </h2>
 
 
-
-<p id="memory4" class="hidden">
+<p id="memory4" class="hidden mt-3">
 
 Thank you for making my life beautiful ❤️
 
@@ -997,13 +1284,7 @@ Thank you for making my life beautiful ❤️
 </div>
 
 
-
-
-
-
-
-
-<!-- SECRET LETTERS -->
+<!-- SECRET LOVE LETTERS -->
 
 
 <h2 class="text-3xl font-bold text-pink-600 mt-10">
@@ -1011,8 +1292,6 @@ Thank you for making my life beautiful ❤️
 💌 Secret Love Letters
 
 </h2>
-
-
 
 
 
@@ -1026,7 +1305,6 @@ Thank you for making my life beautiful ❤️
 💌 Open when you miss me 💕
 
 </h3>
-
 
 
 <p id="letter1" class="hidden mt-3">
@@ -1048,7 +1326,6 @@ Remember our beautiful moments and know that I love you endlessly 💖
 
 
 
-
 <div class="letter" onclick="openLetter(2)">
 
 
@@ -1057,7 +1334,6 @@ Remember our beautiful moments and know that I love you endlessly 💖
 💌 Open when you feel sad 🥺
 
 </h3>
-
 
 
 <p id="letter2" class="hidden mt-3">
@@ -1079,7 +1355,6 @@ Never forget how special and loved you are ❤️
 
 
 
-
 <div class="letter" onclick="openLetter(3)">
 
 
@@ -1088,7 +1363,6 @@ Never forget how special and loved you are ❤️
 💌 Open when you need love 💋
 
 </h3>
-
 
 
 <p id="letter3" class="hidden mt-3">
@@ -1124,15 +1398,17 @@ id="gift"
 
 onclick="openGift()"
 
-class="text-7xl cursor-pointer">
+class="text-7xl cursor-pointer bg-pink-50 rounded-full p-5 inline-block shadow-lg">
+
 
 🎁
+
 
 </div>
 
 
 
-<p class="text-pink-600 font-bold">
+<p class="text-pink-600 font-bold mt-3">
 
 Tap gift box 🎁
 
@@ -1160,6 +1436,7 @@ Tap gift box 🎁
 🎧 My Voice Message ❤️
 
 </h2>
+
 
 
 
@@ -1199,7 +1476,6 @@ onended="resumeLoveSong()">
 
 
 
-
 <button
 
 onclick="lastSurprise()"
@@ -1219,6 +1495,10 @@ class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl">
 
 </div>
 
+
+<!-- END MAIN CARD -->
+
+
 <script>
 
 
@@ -1230,8 +1510,8 @@ function launchConfetti(amount=150, spread=100){
 
         confetti({
 
-            particleCount:amount,
-            spread:spread
+            particleCount: amount,
+            spread: spread
 
         });
 
@@ -1277,6 +1557,7 @@ function cutCake(){
 
 
 
+
     let cutText=document.getElementById("cutText");
 
 
@@ -1289,6 +1570,7 @@ function cutCake(){
 
 
     cake.classList.add("cut-cake");
+
 
 
 
@@ -1334,6 +1616,7 @@ function cutCake(){
 
 
 
+
 // ================= PAGE 1 TO PAGE 2 =================
 
 
@@ -1352,7 +1635,10 @@ function openSurprise(){
 
     msg.classList.remove("hidden");
 
+    msg.style.display="block";
+
     msg.classList.add("popup");
+
 
 
 
@@ -1369,6 +1655,8 @@ function openSurprise(){
         birthdayAudio.currentTime=0;
 
     }
+
+
 
 
 
@@ -1406,6 +1694,7 @@ function openSurprise(){
 
 
 
+
 // ================= PAGE 2 TO PAGE 3 =================
 
 
@@ -1424,6 +1713,8 @@ function finalSurprise(){
 
     page.classList.remove("hidden");
 
+    page.style.display="block";
+
     page.classList.add("popup");
 
 
@@ -1436,6 +1727,7 @@ function finalSurprise(){
 
 
 }
+
 
 
 
@@ -1464,7 +1756,6 @@ function showMemory(num){
 
 
 
-
     if(item.classList.contains("hidden")){
 
 
@@ -1484,9 +1775,7 @@ function showMemory(num){
     }
 
 
-
 }
-
 
 
 
@@ -1526,13 +1815,10 @@ function openLetter(num){
         letter.classList.add("popup");
 
 
-
         launchConfetti(80,70);
 
 
-
         createHearts();
-
 
 
     }
@@ -1546,9 +1832,7 @@ function openLetter(num){
     }
 
 
-
 }
-
 
 
 
@@ -1592,7 +1876,6 @@ function startTimer(){
         let now=new Date();
 
 
-
         let diff=now-start;
 
 
@@ -1602,22 +1885,26 @@ function startTimer(){
 
 
         let hours=Math.floor(
+
         (diff/(1000*60*60))%24
+
         );
 
 
 
         let minutes=Math.floor(
+
         (diff/(1000*60))%60
+
         );
 
 
 
         let seconds=Math.floor(
+
         (diff/1000)%60
+
         );
-
-
 
 
 
@@ -1643,8 +1930,6 @@ function startTimer(){
 
 
 
-
-
     },1000);
 
 
@@ -1659,10 +1944,12 @@ function startTimer(){
 
 
 
-// ================= GIFT =================
+// ================= GIFT POPUP =================
+
 
 
 function openGift(){
+
 
 
     launchConfetti(150,100);
@@ -1695,7 +1982,6 @@ function openGift(){
     </div>
 
 
-
     <p class="text-pink-600 font-bold mt-3">
 
     Tap image to close ❤️
@@ -1704,7 +1990,6 @@ function openGift(){
 
 
     `;
-
 
 
 
@@ -1759,11 +2044,13 @@ function createHearts(){
 
 
         h.style.fontSize=
+
         (20+Math.random()*30)+"px";
 
 
 
         h.style.animationDuration=
+
         (3+Math.random()*5)+"s";
 
 
@@ -1771,6 +2058,7 @@ function createHearts(){
 
 
         document.body.appendChild(h);
+
 
 
 
@@ -1799,8 +2087,6 @@ function createHearts(){
 
 
 
-
-
 // ================= FINAL SURPRISE =================
 
 
@@ -1810,8 +2096,6 @@ function lastSurprise(){
 
 
     launchConfetti(150,120);
-
-
 
 
 
@@ -1829,13 +2113,9 @@ function lastSurprise(){
 
     final.style.height="100vh";
 
-
-
     final.style.background=
 
     "linear-gradient(135deg,#ffd1dc,#ff9a9e,#fad0c4)";
-
-
 
     final.style.display="flex";
 
@@ -1847,24 +2127,21 @@ function lastSurprise(){
 
     final.style.textAlign="center";
 
-
-
     final.style.color="white";
 
     final.style.fontSize="clamp(20px,6vw,38px)";
 
     final.style.fontWeight="bold";
 
-
-
     final.style.zIndex="9999";
 
     final.style.overflow="hidden";
 
+    final.style.animation="popup 1s ease";
+
 
 
     document.body.appendChild(final);
-
 
 
 
@@ -1903,8 +2180,6 @@ function lastSurprise(){
 
 
 
-
-
     loveMessages.forEach((msg,index)=>{
 
 
@@ -1919,39 +2194,13 @@ function lastSurprise(){
 
         text.style.position="absolute";
 
-
-
         text.style.left=Math.random()*70+"vw";
-
-
 
         text.style.top=Math.random()*70+"vh";
 
+        text.style.fontSize=(18+Math.random()*18)+"px";
 
-
-        text.style.fontSize=
-
-        (18+Math.random()*18)+"px";
-
-
-
-        text.style.fontWeight="bold";
-
-
-
-        text.style.color="white";
-
-
-
-        text.style.whiteSpace="nowrap";
-
-
-
-        text.style.textShadow=
-
-        "0 0 15px #ff1493";
-
-
+        text.style.textShadow="0 0 15px #ff1493";
 
         text.style.animation=
 
@@ -1960,12 +2209,6 @@ function lastSurprise(){
         (5+Math.random()*5)+
 
         "s infinite ease-in-out";
-
-
-
-        text.style.animationDelay=
-
-        (index*0.3)+"s";
 
 
 
@@ -1980,46 +2223,32 @@ function lastSurprise(){
 
 
 
-
     for(let i=0;i<25;i++){
-
 
 
         let heart=document.createElement("div");
 
 
-
         heart.innerHTML="❤️";
 
 
-
         heart.style.position="absolute";
-
-
 
         heart.style.left=Math.random()*90+"%";
 
         heart.style.top=Math.random()*90+"%";
 
-
-
         heart.style.fontSize="35px";
-
-
 
         heart.style.animation=
 
         "bounceLove 3s infinite ease-in-out";
 
 
-
         final.appendChild(heart);
 
 
-
     }
-
-
 
 
 
@@ -2028,42 +2257,29 @@ function lastSurprise(){
     for(let i=0;i<10;i++){
 
 
-
         let kiss=document.createElement("div");
-
 
 
         kiss.innerHTML="💋";
 
 
-
         kiss.style.position="absolute";
-
-
 
         kiss.style.left=Math.random()*90+"%";
 
         kiss.style.top=Math.random()*90+"%";
 
-
-
         kiss.style.fontSize="40px";
-
-
 
         kiss.style.animation=
 
         "bounceLove 4s infinite ease-in-out";
 
 
-
         final.appendChild(kiss);
 
 
-
     }
-
-
 
 
 }
@@ -2085,15 +2301,11 @@ function pauseLoveSong(){
     let loveAudio=document.getElementById("loveAudio");
 
 
-
     if(loveAudio && !loveAudio.paused){
-
 
         loveAudio.pause();
 
-
     }
-
 
 
 }
@@ -2105,28 +2317,19 @@ function pauseLoveSong(){
 function resumeLoveSong(){
 
 
-
     let loveAudio=document.getElementById("loveAudio");
-
 
 
     if(loveAudio){
 
-
         loveAudio.play().catch(()=>{});
-
 
     }
 
 
-
 }
 
-
-
-
 </script>
-
 
 </body>
 
