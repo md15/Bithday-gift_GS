@@ -1053,6 +1053,216 @@ width:100%;
 
 }
 
+/* ================= COUNTDOWN PAGE ================= */
+
+
+#countdownPage{
+
+position:fixed;
+
+inset:0;
+
+z-index:10000;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ff758c,
+
+#ff7eb3,
+
+#fad0c4
+
+);
+
+
+overflow:hidden;
+
+}
+
+
+
+.countdown-card{
+
+width:100%;
+
+max-width:450px;
+
+background:rgba(255,255,255,.95);
+
+border-radius:35px;
+
+padding:30px 20px;
+
+text-align:center;
+
+box-shadow:
+
+0 20px 60px rgba(255,0,100,.35);
+
+
+animation:
+
+popup .8s ease;
+
+}
+
+
+
+.countdown-card h1{
+
+margin-top:20px;
+
+font-size:clamp(28px,7vw,42px);
+
+font-weight:900;
+
+color:#ff4081;
+
+}
+
+
+
+.countdown-card p{
+
+color:#777;
+
+font-size:18px;
+
+margin-top:10px;
+
+}
+
+
+
+.timer-box{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:10px;
+
+margin-top:30px;
+
+}
+
+
+
+.timer-box div{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ff9a9e,
+
+#ff4d88
+
+);
+
+
+color:white;
+
+border-radius:20px;
+
+padding:15px 5px;
+
+
+box-shadow:
+
+0 8px 20px #ff4d8866;
+
+
+}
+
+
+
+.timer-box span{
+
+display:block;
+
+font-size:clamp(25px,8vw,40px);
+
+font-weight:900;
+
+}
+
+
+
+.timer-box small{
+
+font-size:13px;
+
+font-weight:bold;
+
+}
+
+
+
+.heart-animation{
+
+font-size:35px;
+
+margin-top:30px;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+
+.waiting{
+
+font-weight:bold;
+
+color:#ff4081!important;
+
+}
+
+
+
+@media(max-width:450px){
+
+.timer-box{
+
+gap:7px;
+
+}
+
+
+.timer-box div{
+
+padding:12px 3px;
+
+border-radius:15px;
+
+}
+
+
+.countdown-card{
+
+padding:25px 15px;
+
+}
+
+
+}
+
 </style>
 
 <body>
@@ -1084,7 +1294,62 @@ webkit-playsinline>
 </audio>
 
 
+<!-- ================= COUNTDOWN PAGE ================= -->
 
+<div id="countdownPage">
+
+    <div class="countdown-card">
+
+        <div class="text-6xl">
+            🎁❤️
+        </div>
+
+        <h1>
+            Something Special Is Coming...
+        </h1>
+
+        <p>
+            A beautiful surprise for my love 💖
+        </p>
+
+
+        <div class="timer-box">
+
+            <div>
+                <span id="days">0</span>
+                <small>Days</small>
+            </div>
+
+            <div>
+                <span id="hours">0</span>
+                <small>Hours</small>
+            </div>
+
+            <div>
+                <span id="minutes">0</span>
+                <small>Minutes</small>
+            </div>
+
+            <div>
+                <span id="seconds">0</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+
+        <div class="heart-animation">
+            💕 💖 💕
+        </div>
+
+
+        <p class="waiting">
+            Waiting for your special moment ✨
+        </p>
+
+    </div>
+
+</div>
 
 
 <!-- MAIN CARD -->
@@ -2587,4 +2852,99 @@ function initScratchCard(canvas){
     }
 
 }
+// ================= BIRTHDAY COUNTDOWN =================
+
+
+function startCountdown(){
+
+
+const target = new Date("November 16, 2026 00:00:00").getTime();
+
+
+
+let countdown=setInterval(()=>{
+
+
+let now=new Date().getTime();
+
+
+let distance=target-now;
+
+
+
+if(distance<=0){
+
+
+clearInterval(countdown);
+
+
+document.getElementById("countdownPage").style.display="none";
+
+
+document.getElementById("initial").style.display="block";
+
+
+launchConfetti(300,150);
+
+
+createHearts();
+
+
+return;
+
+
+}
+
+
+
+let days=Math.floor(distance/(1000*60*60*24));
+
+
+let hours=Math.floor(
+(distance%(1000*60*60*24))/(1000*60*60)
+);
+
+
+
+let minutes=Math.floor(
+(distance%(1000*60*60))/(1000*60)
+);
+
+
+
+let seconds=Math.floor(
+(distance%(1000*60))/1000
+);
+
+
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+
+
+},1000);
+
+
+
+}
+
+
+
+window.addEventListener("load",()=>{
+
+
+document.getElementById("initial").style.display="none";
+
+
+startCountdown();
+
+
+});
+
 </script>
