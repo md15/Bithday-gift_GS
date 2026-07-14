@@ -1023,6 +1023,36 @@ width:100%;
 
 }
 
+.scratch-card{
+
+    position:relative;
+    width:100%;
+    aspect-ratio:1;
+    border-radius:22px;
+    overflow:hidden;
+
+}
+
+.scratch-card img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+
+}
+
+.scratch{
+
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    touch-action:none;
+    cursor:pointer;
+
+}
+
 </style>
 
 <body>
@@ -1084,7 +1114,7 @@ webkit-playsinline>
 
 <p class="mt-6 text-xl text-gray-700">
 
-🎂❤️ <b>Happy Birthday My Love </b>❤️🎂
+🎂❤️ <b>Happy Birthday My Love ❤️</b>
 
 </p>
 
@@ -1096,12 +1126,17 @@ webkit-playsinline>
 
 
 <p class="mt-4 text-gray-500">
-Wishing you a day filled with endless happiness, laughter, love, and everything your heart desires 😊✨ May this year bring you success, good health, endless blessings, and countless reasons to smile 🌟💫
+Wishing you a day filled with endless happiness, laughter, love, and everything your heart desires 😊✨
+May this year bring you success, good health, endless blessings, and countless reasons to smile 🌟💫
 <br><br>
-Thank you for bringing so much joy, warmth, and positivity into my life 💕🌸 Every moment with you is a beautiful memory that I cherish forever 🥰✨ I'll always be by your side, supporting you, loving you endlessly, and making unforgettable memories with you 🤗❤️
+Thank you for bringing so much joy, warmth, and positivity into my life 💕🌸
+Every moment with you is a beautiful memory that I cherish forever 🥰✨
+I'll always be by your side, supporting you, loving you endlessly, and making unforgettable memories with you 🤗❤️
 <br><br>
-Enjoy your special day to the fullest 🎈🎁 Keep smiling, keep shining, and always remember how special and loved you are 💖✨
+Enjoy your special day to the fullest 🎈🎁
+Keep smiling, keep shining, and always remember how special and loved you are 💖✨
 </p>
+
 </div>
 
 
@@ -2065,59 +2100,52 @@ seconds+" Seconds";
 // ================= GIFT =================
 
 
-function openGift(){
+function openGift() {
 
+    launchConfetti(150,100);
 
-launchConfetti(150,100);
+    let popup=document.createElement("div");
+    popup.className="gift-popup";
 
+    popup.innerHTML=`
 
+    <div class="gift-gallery">
 
-let popup=document.createElement("div");
+        <div class="scratch-card">
+            <img src="Gift1.jpg">
+            <canvas class="scratch"></canvas>
+        </div>
 
+        <div class="scratch-card">
+            <img src="Gift2.jpg">
+            <canvas class="scratch"></canvas>
+        </div>
 
+        <div class="scratch-card">
+            <img src="Gift3.jpg">
+            <canvas class="scratch"></canvas>
+        </div>
 
-popup.className="gift-popup";
+        <div class="scratch-card">
+            <img src="Gift4.jpg">
+            <canvas class="scratch"></canvas>
+        </div>
 
+    </div>
 
+    <p class="text-pink-600 font-bold mt-4">
+        🎁 Scratch each card to reveal your surprise ❤️
+    </p>
 
-popup.innerHTML=`
+    <button onclick="this.parentElement.remove()">
+        Close
+    </button>
 
-<div class="gift-gallery">
+    `;
 
+    document.body.appendChild(popup);
 
-<img src="Gift1.jpg">
-
-
-<img src="Gift2.jpg">
-
-
-<img src="Gift3.jpg">
-
-
-<img src="Gift4.jpg">
-
-
-</div>
-
-
-<p class="text-pink-600 font-bold mt-3">
-
-Tap image to close ❤️
-
-</p>
-
-`;
-
-
-
-popup.onclick=()=>popup.remove();
-
-
-
-document.body.appendChild(popup);
-
-
-
+    popup.querySelectorAll(".scratch").forEach(initScratchCard);
 }
 
 
@@ -2473,5 +2501,90 @@ a.play().catch(()=>{});
 }
 
 
+function initScratchCard(canvas){
 
+    const ctx=canvas.getContext("2d");
+
+    const card=canvas.parentElement;
+
+    const w=card.offsetWidth;
+    const h=card.offsetHeight;
+
+    canvas.width=w;
+    canvas.height=h;
+
+    // Scratch coating
+    ctx.fillStyle="#c0c0c0";
+    ctx.fillRect(0,0,w,h);
+
+    // Text
+    ctx.fillStyle="#ffffff";
+    ctx.font="bold 24px sans-serif";
+    ctx.textAlign="center";
+    ctx.textBaseline="middle";
+    ctx.fillText("Scratch Me ❤️",w/2,h/2);
+
+    ctx.globalCompositeOperation="destination-out";
+
+    let drawing=false;
+
+    function scratch(x,y){
+
+        ctx.beginPath();
+        ctx.arc(x,y,25,0,Math.PI*2);
+        ctx.fill();
+
+    }
+
+    canvas.addEventListener("pointerdown",e=>{
+
+        drawing=true;
+
+        scratch(e.offsetX,e.offsetY);
+
+    });
+
+    canvas.addEventListener("pointermove",e=>{
+
+        if(!drawing) return;
+
+        scratch(e.offsetX,e.offsetY);
+
+    });
+
+    window.addEventListener("pointerup",()=>{
+
+        drawing=false;
+
+        checkReveal();
+
+    });
+
+    function checkReveal(){
+
+        const pixels=ctx.getImageData(0,0,w,h).data;
+
+        let cleared=0;
+
+        for(let i=3;i<pixels.length;i+=4){
+
+            if(pixels[i]===0) cleared++;
+
+        }
+
+        const percent=cleared/(w*h);
+
+        if(percent>0.55){
+
+            canvas.style.transition=".6s";
+            canvas.style.opacity="0";
+            setTimeout(()=>canvas.remove(),600);
+
+            launchConfetti(80,80);
+
+        }
+
+    }
+
+}
 </script>
