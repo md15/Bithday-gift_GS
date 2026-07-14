@@ -1453,20 +1453,55 @@ Tap cake to cut 🎂✨
 
 
 
+<!-- SECRET KEY LOCK -->
 
-<button
+<div id="secretArea" style="display:none;" class="mt-8">
 
-onclick="openSurprise()"
+<h2 class="text-2xl font-bold text-pink-600">
+🔐 Secret Love Key
+</h2>
 
-class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl shadow-lg">
+<input
+
+id="loveKey"
+
+type="password"
+
+placeholder="My Nickname + Our Secret Password + Your Name ❤️️"
+
+class="mt-4 p-3 rounded-xl border-2 border-pink-300 text-center w-full">
 
 
-Click for Surprise 🎊
+<button onclick="checkLoveKey()" class="mt-5">
 
+Unlock 🔓
 
 </button>
 
 
+<p id="keyMessage" class="mt-3 font-bold text-pink-600"></p>
+
+
+</div>
+
+
+
+<!-- HIDDEN SURPRISE BUTTON -->
+
+
+<button
+
+id="surpriseButton"
+
+onclick="openSurprise()"
+
+style="display:none"
+
+class="mt-8 px-8 py-3 bg-red-500 text-white rounded-xl shadow-lg">
+
+Click for Surprise 🎊
+
+</button>
 
 
 </div>
@@ -2064,7 +2099,11 @@ document.getElementById("birthdayMessage").innerHTML=
 
 launchConfetti(300,150);
 
+setTimeout(()=>{
 
+document.getElementById("secretArea").style.display="block";
+
+},1200);
 
 },1000);
 
@@ -2858,7 +2897,7 @@ function initScratchCard(canvas){
 function startCountdown(){
 
 
-const target = new Date("November 16, 2026 00:00:00").getTime();
+const target = new Date("June 16, 2026 00:00:00").getTime();
 
 
 
@@ -2947,4 +2986,35 @@ startCountdown();
 
 });
 
+// ================= SECRET LOVE KEY =================
+
+
+function checkLoveKey(){
+
+    let key = document.getElementById("loveKey").value.trim();
+
+    let correctKey = "151669";
+
+    if(key.toLowerCase() === correctKey.toLowerCase()){
+
+        launchConfetti(200,120);
+
+        document.getElementById("keyMessage").innerHTML =
+        "❤️ Correct Key! Opening Surprise... 🎁";
+
+        setTimeout(()=>{
+
+            openSurprise();
+
+        },800);
+
+    }
+    else{
+
+        document.getElementById("keyMessage").innerHTML =
+        "💔 Wrong key... Try again ❤️";
+
+    }
+
+}
 </script>
